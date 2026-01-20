@@ -88,3 +88,14 @@ body {
 .card p {
   font-weight: bold;
 }
+.footer-links a {
+  color: gold;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer-links a:hover {
+  color: white;
+}
+           
