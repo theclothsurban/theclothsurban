@@ -1,0 +1,75 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fff;
+  color: #000;
+}
+
+.header {
+  background: #000;
+  color: gold;
+  text-align: center;
+  padding: 20px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  background: #111;
+}
+
+.navbar a {
+  color: white;
+  padding: 15px;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  background: gold;
+  color: black;
+}
+
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.btn {
+  background: black;
+  color: gold;
+  padding: 12px 25px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer {
+  background: #000;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 40px;
+}
+
+.card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+.card h3 {
+  margin: 10px 0;
+}
+
+.card p {
+  font-weight: bold;
+}
