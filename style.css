@@ -115,3 +115,12 @@ body {
   color: white;
 }
            
+.product img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+}
+           
