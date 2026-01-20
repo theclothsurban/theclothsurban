@@ -1,4 +1,4 @@
-body {
+tbody {
   margin: 0;
   font-family: Arial, sans-serif;
   background: #fff;
@@ -505,6 +505,11 @@ footer {
   padding: 20px;
   font-size: 13px;
 }
+
+  .logo {
+  width: 80px;
+  margin-bottom: 10px;
+  }
            
            
            
