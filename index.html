@@ -1,60 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>TheClothsUrban | Premium Clothing</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TheClothsUrban</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+        }
+
+        header {
+            background: black;
+            color: gold;
+            text-align: center;
+            padding: 20px 10px;
+        }
+
+        nav {
+            background: #111;
+            text-align: center;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 14px;
+        }
+
+        .hero {
+            background: white;
+            text-align: center;
+            padding: 40px 15px;
+        }
+
+        .hero button {
+            background: black;
+            color: gold;
+            border: none;
+            padding: 12px 20px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        /* 🔥 PRODUCT CARD */
+        .product {
+            background: white;
+            margin: 20px auto;
+            padding: 15px;
+            max-width: 360px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        /* 🔥 IMAGE SIZE FIX (FINAL) */
+        .product img {
+            width: 100%;
+            max-width: 260px;
+            height: auto;
+            display: block;
+            margin: 0 auto 15px;
+            border-radius: 10px;
+        }
+
+        .product h3 {
+            margin: 5px 0;
+        }
+
+        .product p {
+            margin: 5px 0 10px;
+            font-weight: bold;
+        }
+
+        .product a {
+            display: inline-block;
+            background: black;
+            color: gold;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        footer {
+            background: black;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 13px;
+        }
+    </style>
 </head>
 <body>
 
-<header class="header">
-  <h1>TheClothsUrban</h1>
-  <p>Urban • Premium • Stylish</p>
+<header>
+    <h1>TheClothsUrban</h1>
+    <p>Urban • Premium • Stylish</p>
 </header>
 
-<nav class="navbar">
-  <a href="index.html">Home</a>
-  <a href="shop.html">Shop</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
+<nav>
+    <a href="#">Home</a>
+    <a href="#">Shop</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
 </nav>
 
 <section class="hero">
-  <h2>Upgrade Your Style</h2>
-  <p>Premium Urban Clothing for Modern India</p>
-  <a class="btn" href="#shop">Shop Collection</a>
+    <h2>Upgrade Your Style</h2>
+    <p>Premium Urban Clothing for Modern India</p>
+    <button>Shop Collection</button>
 </section>
 
-  <section class="products" id="shop">
-  <div class="card">
-    <img src="tshirt.jpg" class="product-img" alt="Urban Black T-Shirt">
-    
+<!-- 🔥 PRODUCT 1 -->
+<div class="product">
+    <img src="tshirt.jpg" alt="Urban Black T-Shirt">
     <h3>Urban Black T-Shirt</h3>
     <p>₹499</p>
-    <a class="btn" href="https://wa.me/91XXXXXXXXXX" target="_blank">
-      Order on WhatsApp
-    </a>
-  </div>
+    <a href="https://wa.me/919023416010">Order on WhatsApp</a>
+</div>
 
-  <div class="card">
+<!-- 🔥 PRODUCT 2 -->
+<div class="product">
     <img src="shirt.jpg" alt="Premium White Shirt">
     <h3>Premium White Shirt</h3>
     <p>₹899</p>
-    <a class="btn" href="https://wa.me/91XXXXXXXXXX" target="_blank">
-      Order on WhatsApp
-    </a>
-  </div>
-  </section>
-  
+    <a href="https://wa.me/919023416010">Order on WhatsApp</a>
+</div>
 
-<footer class="footer">
-  <p>© 2026 TheClothsUrban. All Rights Reserved.</p>
-  <a href="https://wa.me/919023416010">WhatsApp</a> |
-  <a href="#">Instagram</a>
+<footer>
+    © 2026 TheClothsUrban. All Rights Reserved.
 </footer>
-  
-  
-  
 
 </body>
 </html>
