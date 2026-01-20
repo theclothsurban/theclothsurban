@@ -336,4 +336,36 @@ footer a:hover {
   color: #444;
   line-height: 1.5;
 }
+
+ .instagram {
+  background: #ffffff;
+  padding: 35px 20px;
+  margin: 30px auto;
+  max-width: 900px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.instagram h2 {
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+.instagram p {
+  font-size: 15px;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+.insta-btn {
+  display: inline-block;
+  background: #000;
+  color: gold;
+  padding: 12px 22px;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+}
            
+ 
