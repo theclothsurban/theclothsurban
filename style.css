@@ -220,5 +220,34 @@ footer a:hover {
   font-weight: bold;
   }
            
+   .info {
+  background: #ffffff;
+  padding: 30px 20px;
+  margin: 30px auto;
+  max-width: 900px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.info h2 {
+  margin-bottom: 15px;
+}
+
+.info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.info ul li {
+  margin: 8px 0;
+  font-size: 15px;
+}
+
+.brand-info {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #555;
+}
            
                                
