@@ -308,4 +308,32 @@ footer a:hover {
   margin-bottom: 12px;
 }
            
-                               
+  .faq {
+  background: #f9f9f9;
+  padding: 35px 20px;
+  margin: 30px auto;
+  max-width: 900px;
+  border-radius: 12px;
+}
+
+.faq h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+.faq-item {
+  margin-bottom: 15px;
+}
+
+.faq-item h4 {
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+.faq-item p {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.5;
+}
+           
