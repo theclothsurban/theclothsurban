@@ -80,6 +80,44 @@ body {
   margin-bottom: 10px;
 }
 
+  .contact-us {
+  background: #ffffff;
+  padding: 35px 20px;
+  margin: 30px auto;
+  max-width: 900px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.contact-us h2 {
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+.contact-us p {
+  font-size: 15px;
+  color: #444;
+  margin-bottom: 12px;
+}
+
+.contact-details p {
+  margin: 6px 0;
+  font-size: 14px;
+}
+
+.contact-btn {
+  display: inline-block;
+  margin-top: 15px;
+  background: black;
+  color: gold;
+  padding: 12px 20px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+           
+
 .products {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
