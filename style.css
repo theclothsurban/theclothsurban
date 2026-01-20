@@ -123,4 +123,13 @@ body {
     display: block;
     margin: 0 auto;
 }
+ /* FORCE IMAGE SIZE FIX */
+.product-img {
+    width: 280px;
+    max-width: 90%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 12px;
+}
            
