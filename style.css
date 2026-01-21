@@ -258,4 +258,65 @@ nav a:hover {
   color: #444;
 }
   
+/* ===== Luxury Footer ===== */
+.luxury-footer {
+  background: #0b0b0b;
+  color: #ccc;
+  padding: 70px 20px 20px;
+}
 
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+}
+
+.footer-brand h2 {
+  color: #d4af37;
+  font-size: 26px;
+  margin-bottom: 15px;
+}
+
+.footer-brand p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #aaa;
+}
+
+.footer-links h4,
+.footer-contact h4 {
+  color: #fff;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.footer-links a {
+  display: block;
+  color: #aaa;
+  text-decoration: none;
+  margin-bottom: 10px;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #d4af37;
+}
+
+.footer-contact p {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #aaa;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  font-size: 13px;
+  color: #777;
+}
+  
