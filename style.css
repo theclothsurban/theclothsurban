@@ -205,7 +205,8 @@ nav a:hover {
   .contact h2 {
     font-size: 26px;
   }
-/* WhatsApp Floating Button */
+
+  /* WhatsApp Floating Button */
 .whatsapp-float {
   position: fixed;
   bottom: 20px;
