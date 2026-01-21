@@ -6,172 +6,179 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  color: #222;
-  background: #fff;
+  background: #ffffff;
+  color: #111;
 }
 
 /* ===== HEADER ===== */
 .header {
-  background: #000;
-  color: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 30px;
   position: sticky;
   top: 0;
   z-index: 1000;
+  background: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 32px;
 }
 
 .logo img {
-  height: 45px;
+  height: 42px;
 }
 
 nav a {
   color: #fff;
-  margin-left: 25px;
   text-decoration: none;
-  font-size: 14px;
+  margin-left: 28px;
+  font-size: 13px;
   letter-spacing: 1px;
+  transition: 0.3s;
 }
 
 nav a:hover {
-  color: gold;
+  color: #d4af37;
 }
 
 /* ===== HERO ===== */
 .hero {
-  background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
-              url('product1.jpg') center/cover no-repeat;
+  min-height: 90vh;
+  background: linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)),
+              url('tshirt.jpg') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   color: #fff;
-  padding: 120px 20px;
+  padding: 20px;
 }
 
 .hero h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 42px;
+  font-size: 46px;
   margin-bottom: 15px;
 }
 
 .hero p {
-  font-size: 16px;
-  max-width: 600px;
-  margin: auto;
+  max-width: 620px;
+  font-size: 15px;
   opacity: 0.9;
 }
 
 .btn {
-  display: inline-block;
-  margin-top: 25px;
-  padding: 12px 28px;
-  background: gold;
+  margin-top: 28px;
+  padding: 12px 34px;
+  border-radius: 30px;
+  background: #d4af37;
   color: #000;
   text-decoration: none;
   font-weight: 500;
-  border-radius: 30px;
+  transition: 0.3s;
 }
 
 .btn:hover {
-  background: #d4af37;
+  background: #000;
+  color: #d4af37;
 }
 
 /* ===== SHOP ===== */
 .shop {
-  padding: 70px 20px;
+  padding: 80px 20px;
   text-align: center;
 }
 
 .shop h2 {
   font-family: 'Playfair Display', serif;
-  font-size: 32px;
-  margin-bottom: 40px;
+  font-size: 34px;
+  margin-bottom: 45px;
 }
 
 .products {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 35px;
+  max-width: 1100px;
+  margin: auto;
 }
 
+/* ===== PRODUCT CARD ===== */
 .product-card {
   background: #fff;
-  width: 260px;
-  padding: 15px;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
+  border-radius: 20px;
+  padding: 18px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+  transition: 0.4s;
 }
 
 .product-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-12px);
 }
 
 .product-card img {
   width: 100%;
-  border-radius: 14px;
+  border-radius: 16px;
 }
 
 .product-card h3 {
-  margin-top: 15px;
+  margin-top: 18px;
   font-size: 16px;
 }
 
 .price {
-  margin: 10px 0;
+  margin: 8px 0 15px;
   font-weight: 600;
 }
 
 .order-btn {
   display: inline-block;
-  padding: 8px 18px;
+  padding: 9px 22px;
   background: #000;
   color: #fff;
-  text-decoration: none;
-  border-radius: 20px;
+  border-radius: 22px;
   font-size: 13px;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
 .order-btn:hover {
-  background: gold;
+  background: #d4af37;
   color: #000;
 }
 
 /* ===== ABOUT ===== */
 .about {
-  background: #f8f8f8;
-  padding: 70px 20px;
+  background: #f7f7f7;
+  padding: 80px 20px;
   text-align: center;
 }
 
 .about h2 {
   font-family: 'Playfair Display', serif;
-  font-size: 30px;
+  font-size: 32px;
   margin-bottom: 20px;
 }
 
 .about p {
   max-width: 750px;
   margin: auto;
-  line-height: 1.7;
-  margin-bottom: 15px;
+  line-height: 1.8;
+  font-size: 15px;
 }
 
 /* ===== CONTACT ===== */
 .contact {
-  padding: 70px 20px;
+  padding: 80px 20px;
   text-align: center;
 }
 
 .contact h2 {
   font-family: 'Playfair Display', serif;
-  font-size: 30px;
+  font-size: 32px;
   margin-bottom: 20px;
 }
 
 .contact p {
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 /* ===== FOOTER ===== */
@@ -179,7 +186,7 @@ nav a:hover {
   background: #000;
   color: #aaa;
   text-align: center;
-  padding: 15px;
+  padding: 18px;
   font-size: 13px;
 }
 
@@ -193,8 +200,9 @@ nav a:hover {
     font-size: 30px;
   }
 
-  .products {
-    flex-direction: column;
-    align-items: center;
+  .shop h2,
+  .about h2,
+  .contact h2 {
+    font-size: 26px;
   }
 }
