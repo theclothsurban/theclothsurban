@@ -22,9 +22,10 @@ header {
 }
 
 header img {
-  height: 80px;
-  margin-bottom: 10px;
+  height: 70px;
+  object-fit: contain;
 }
+
 
 nav a {
   color: #fff;
