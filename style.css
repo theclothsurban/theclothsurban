@@ -368,4 +368,21 @@ body {
 }
 
 
+.product-card a {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 22px;
+  background: #000;
+  color: #c9a24d;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.product-card a:hover {
+  background: #c9a24d;
+  color: #000;
+}
 
