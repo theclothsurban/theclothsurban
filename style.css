@@ -183,4 +183,48 @@ footer p {
     opacity: 1;
     transform: translateY(0);
   }
+/* ===== Glassmorphism Product Cards ===== */
+.card {
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+  padding: 16px;
 }
+
+/* Dark section support */
+body {
+  background: linear-gradient(135deg, #0b0b0b, #1a1a1a);
+}
+
+/* Product title */
+.card h3 {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Price styling */
+.card p {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* Gold luxury button */
+.card a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 18px;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #c9a24d, #f1d27a);
+  color: #000;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* Button hover */
+.card a:hover {
+  background: linear-gradient(135deg, #f1d27a, #c9a24d);
+}
+
