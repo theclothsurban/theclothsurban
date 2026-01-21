@@ -65,6 +65,7 @@ nav a:hover {
   background: linear-gradient(to right, #000, #111);
   color: #fff;
   text-align: center;
+  min-height: 90vh;
   padding: 80px 20px;
 }
 
@@ -389,3 +390,30 @@ body {
 html {
   scroll-behavior: smooth;
 }
+@media (max-width: 768px) {
+
+  body {
+    overflow-x: hidden;
+  }
+
+  .container,
+  .footer-container,
+  .info-section {
+    flex-direction: column !important;
+    text-align: left;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .product-card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  section {
+    padding: 20px 15px;
+  }
+}
+
