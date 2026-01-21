@@ -5,10 +5,11 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Inter', sans-serif;
   background: #ffffff;
   color: #111;
 }
+
 
 /* ===== HEADER ===== */
 .header {
