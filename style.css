@@ -163,10 +163,7 @@ footer p {
   color: #000;
 }
 
-/* Fade-in animation on page load */
-.card {
-  animation: fadeUp 0.8s ease forwards;
-  opacity: 0;
+
 }
 
 .card:nth-child(1) { animation-delay: 0.2s; }
@@ -227,4 +224,18 @@ body {
 .card a:hover {
   background: linear-gradient(135deg, #f1d27a, #c9a24d);
 }
+
+/* ===== Scroll Reveal Animation ===== */
+.card {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
 
