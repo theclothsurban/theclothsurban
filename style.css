@@ -237,8 +237,13 @@ footer {
 }
 
 footer h3 {
-  color: #c9a24d;
-  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+footer p,
+footer li {
+  font-size: 14px;
+  line-height: 1.6;
 }
 
 footer p {
