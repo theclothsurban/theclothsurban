@@ -137,3 +137,22 @@ body {
   padding: 20px;
   margin-top: 60px;
 }
+
+/* ===== LOGO FIX (PREMIUM LOOK) ===== */
+.logo {
+  max-width: 140px;   /* luxury brands small logo use karte hain */
+  height: auto;
+  display: block;
+  margin: 0 auto 15px;
+}
+
+/* Header spacing improvement */
+.header {
+  padding: 25px 15px 20px;
+}
+
+/* Remove extra white feel */
+.header img {
+  background: transparent;
+}
+
