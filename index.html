@@ -33,7 +33,20 @@
 <title>TheClothsUrban | Premium Urban Clothing Brand</title>
     
 
-<style>
+<script>
+  const cards = document.querySelectorAll('.card');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  }, { threshold: 0.2 });
+
+  cards.forEach(card => observer.observe(card));
+</script>
+   
 body {
     margin: 0;
     font-family: Arial, sans-serif;
