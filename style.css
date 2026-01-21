@@ -49,16 +49,27 @@ nav a:hover {
 
 .hero h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 36px;
+  font-size: 40px;
   color: #c9a24d;
   margin-bottom: 10px;
 }
 
 .hero p {
-  font-size: 15px;
+  font-size: 16px;
   opacity: 0.8;
   margin-bottom: 30px;
 }
+
+.hero h1 {
+  font-size: 40px;
+  letter-spacing: 1px;
+}
+
+.hero p {
+  font-size: 16px;
+  opacity: 0.9;
+}
+
 
 .hero button {
   padding: 12px 28px;
