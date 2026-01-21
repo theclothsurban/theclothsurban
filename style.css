@@ -103,6 +103,24 @@ nav a:hover {
   margin-bottom: 14px;
 }
 
+.product a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 18px;
+  background: #000;
+  color: #c9a24d;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.product a:hover {
+  background: #c9a24d;
+  color: #000;
+}
+
+
 
 .card {
   background: #fff;
