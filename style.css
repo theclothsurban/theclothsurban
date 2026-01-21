@@ -417,3 +417,18 @@ html {
   }
 }
 
+.whatsapp-btn {
+  display: inline-block;
+  background: black;
+  color: gold;
+  padding: 10px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+  background: gold;
+  color: black;
+}
