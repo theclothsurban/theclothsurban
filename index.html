@@ -280,6 +280,26 @@ function addToCart(name, price) {
     <button class="checkout-btn">Proceed to Checkout</button>
   </div>
 </div>
+
+  <!-- CART OVERLAY -->
+<div id="cartOverlay" class="cart-overlay"></div>
+
+<!-- CART PANEL -->
+<div id="cartPanel" class="cart-panel">
+  <div class="cart-header">
+    <h2>Your Cart</h2>
+    <button onclick="closeCart()">✕</button>
+  </div>
+
+  <div id="cartItems" class="cart-items">
+    <!-- Products JS se yaha aayenge -->
+  </div>
+
+  <div class="cart-footer">
+    <p>Total: ₹<span id="cartTotal">0</span></p>
+    <button class="checkout-btn">Proceed to Checkout</button>
+  </div>
+</div>
   
 </body>
 </html>
