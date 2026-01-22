@@ -162,24 +162,6 @@ footer {
   font-size: 14px;
 }
 
-/* FLOATING WHATSAPP */
-.float-whatsapp {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 55px;
-  height: 55px;
-  background: #25d366;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 8px 25px rgba(0,0,0,.3);
-}
-
-.float-whatsapp img {
-  width: 28px;
-}
 
 /* MOBILE */
 @media(max-width: 768px) {
