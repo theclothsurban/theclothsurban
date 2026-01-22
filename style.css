@@ -92,20 +92,22 @@ nav a {
 }
 
 .add-cart {
-  width: 100%;
-  padding: 12px;
-  background: black;
-  color: white;
+  margin-top: 14px;
+  padding: 14px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #000, #222);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
   border: none;
-  font-size: 14px;
-  cursor: pointer;
-  transition: all 0.3s ease;
 }
 
 .add-cart:hover {
-  background: #c9a23f;
-  color: black;
+  background: linear-gradient(135deg, #c9a23f, #b08a2e);
+  color: #000;
 }
+
 
 /* ================= SECTIONS ================= */
 section {
@@ -140,15 +142,15 @@ section {
 
 .product-card {
   background: #fff;
-  border-radius: 18px;
-  padding: 25px;
+  border-radius: 16px;
+  padding: 14px;
   text-align: center;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
 }
 
 .product-card img {
   width: 100%;
-  border-radius: 12px;
+  border-radius: 14px;
 }
 
 .product-card h3 {
@@ -168,6 +170,7 @@ section {
   background: #111;
   color: #fff;
 }
+
 
 /* ================= ABOUT ================= */
 .about {
@@ -222,3 +225,18 @@ footer {
     display: none;
   }
 }
+
+.bottom-cta {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.bottom-cta a {
+  padding: 16px 36px;
+  border-radius: 40px;
+  background: black;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
