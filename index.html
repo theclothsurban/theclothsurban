@@ -265,6 +265,15 @@ function removeItem(index) {
 }
    </script>
       
-      
+  <script>
+let cartCount = 0;
+
+function addToCart(name, price) {
+  cartCount++;
+  document.getElementById("cart-count").innerText = cartCount;
+  alert(name + " added to cart");
+}
+  </script>
+  
 </body>
 </html>
