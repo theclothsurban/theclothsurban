@@ -144,7 +144,7 @@ function renderCart() {
 
   cart.forEach((item, index) => {
     cartItems.innerHTML += `
-      <div class="cart-item">
+      <div id="cart-items"></div>
         <span>${item.name}</span>
         <span>₹${item.price}</span>
       </div>
