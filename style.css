@@ -117,6 +117,17 @@ section {
   font-size: 28px;
   margin-bottom: 40px;
 }
+.featured-section {
+  padding: 60px 16px;   /* mobile friendly */
+  background: #fff;
+}
+
+.featured-section h2 {
+  text-align: center;
+  font-size: 22px;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+}
 
 /* ================= PRODUCTS ================= */
 .product-grid {
