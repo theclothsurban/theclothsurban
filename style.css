@@ -80,6 +80,43 @@ nav a {
   display: inline-block;
   padding: 14px 34px;
   border-radius: 30px;
+
+  .cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+}
+
+.cart-item-name {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.qty-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.qty-controls button {
+  width: 22px;
+  height: 22px;
+  border: none;
+  background: black;
+  color: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.remove-btn {
+  color: red;
+  cursor: pointer;
+  font-size: 14px;
+}
+  
   background: #d4af37;
   color: #000;
   font-weight: 600;
