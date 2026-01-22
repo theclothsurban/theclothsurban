@@ -1,1 +1,14 @@
+<h2>Your Cart</h2>
+<div id="cartItems"></div>
+
+<script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let output = "";
+
+cart.forEach(item => {
+  output += `<p>${item.name} - ₹${item.price}</p>`;
+});
+
+document.getElementById("cartItems").innerHTML = output;
+</script>
 
