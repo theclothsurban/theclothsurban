@@ -1,3 +1,11 @@
+html {
+  scroll-behavior: smooth;
+}
+
+nav a:hover {
+  border-bottom: 2px solid #000; /* premium hover cue */
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -369,5 +377,12 @@ p {
   border-top: 1px solid rgba(255,255,255,0.1);
   font-size: 13px;
   color: #777;
+}
+  
+.trust {
+  text-align: center;
+  padding: 24px 20px;
+  font-size: 15px;
+  background: #fafafa;
 }
   
