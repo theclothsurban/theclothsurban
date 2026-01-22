@@ -85,6 +85,22 @@ nav a {
   background: #fff;
 }
 
+.add-cart {
+  width: 100%;
+  padding: 12px;
+  background: black;
+  color: white;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.add-cart:hover {
+  background: #c9a23f;
+  color: black;
+}
+
 /* ================= SECTIONS ================= */
 section {
   padding: 80px 20px;
