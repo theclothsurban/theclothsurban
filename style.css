@@ -379,3 +379,66 @@ button:hover {
   transform: translateY(-2px);
 }
 
+/* INFO SECTIONS */
+.info-section {
+  padding: 60px 16px;
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+}
+
+.info-section h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.info-section p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #444;
+}
+
+.info-section.dark {
+  background: #000;
+  color: #fff;
+}
+
+.info-section.dark p,
+.info-section.dark h2 {
+  color: #fff;
+}
+
+/* WHY LIST */
+.why-list {
+  list-style: none;
+  padding: 0;
+}
+
+.why-list li {
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+/* FAQ */
+.faq {
+  text-align: left;
+  margin-bottom: 16px;
+}
+
+.faq h4 {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.faq p {
+  font-size: 13px;
+  color: #555;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .info-section {
+    padding: 40px 14px;
+  }
+}
