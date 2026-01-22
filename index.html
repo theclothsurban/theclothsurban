@@ -305,5 +305,20 @@ function addToCart(name, price) {
 }
   </script>
   
+  <!-- CART PANEL -->
+<div id="cart-panel">
+  <div class="cart-header">
+    <h3>Your Cart</h3>
+    <span class="close-cart" onclick="toggleCart()">✕</span>
+  </div>
+
+  <div id="cart-items"></div>
+
+  <div class="cart-footer">
+    <p>Total: ₹<span id="cart-total">0</span></p>
+    <button class="checkout-btn">Proceed to Checkout</button>
+  </div>
+</div>
+  
 </body>
 </html>
