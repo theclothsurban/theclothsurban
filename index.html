@@ -224,76 +224,43 @@
     <button class="checkout-btn">Checkout</button>
   </div>
 </div>
-
-   <script>
+<script>
 let cart = [];
+let cartCount = 0;
 
 function toggleCart() {
   document.getElementById("cart-panel").classList.toggle("active");
 }
 
 function addToCart(name, price) {
-  let found = cart.find(item => item.name === name);
-
-  if (found) {
-    found.qty += 1;
-  } else {
-    cart.push({ name, price, qty: 1 });
-  }
-
+  cart.push({ name, price });
+  cartCount++;
+  document.getElementById("cart-count").innerText = cartCount;
   updateCart();
 }
 
 function updateCart() {
-  let cartItems = document.getElementById("cart-items");
-  let cartCount = document.getElementById("cart-count");
-  let cartTotal = document.getElementById("cart-total");
-
+  const cartItems = document.getElementById("cart-items");
+  const totalEl = document.getElementById("cart-total");
   cartItems.innerHTML = "";
+
   let total = 0;
-  let count = 0;
 
-  cart.forEach((item, index) => {
-    total += item.price * item.qty;
-    count += item.qty;
-
+  cart.forEach(item => {
+    total += item.price;
     cartItems.innerHTML += `
       <div class="cart-item">
-        <div>
-          <div class="cart-item-name">${item.name}</div>
-          <div>₹${item.price}</div>
-        </div>
-
-        <div class="qty-controls">
-          <button onclick="changeQty(${index}, -1)">−</button>
-          <span>${item.qty}</span>
-          <button onclick="changeQty(${index}, 1)">+</button>
-        </div>
-
-        <div class="remove-btn" onclick="removeItem(${index})">✖</div>
+        <span>${item.name}</span>
+        <span>₹${item.price}</span>
       </div>
     `;
   });
 
-  cartCount.innerText = count;
-  cartTotal.innerText = total;
+  totalEl.innerText = total;
 }
-
-function changeQty(index, change) {
-  cart[index].qty += change;
-
-  if (cart[index].qty <= 0) {
-    cart.splice(index, 1);
-  }
-
-  updateCart();
-}
-
-function removeItem(index) {
-  cart.splice(index, 1);
-  updateCart();
-}
-   </script>
+</script>
+  
+   
       
   <script>
 let cartCount = 0;
