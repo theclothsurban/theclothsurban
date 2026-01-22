@@ -300,6 +300,102 @@ function addToCart(name, price) {
     <button class="checkout-btn">Proceed to Checkout</button>
   </div>
 </div>
+
+  <script>
+let cart = [];
+
+function openCart() {
+  document.getElementById("cartPanel").classList.add("active");
+  document.getElementById("cartOverlay").style.display = "block";
+}
+
+function closeCart() {
+  document.getElementById("cartPanel").classList.remove("active");
+  document.getElementById("cartOverlay").style.display = "none";
+}
+
+function addToCart(name, price, image) {
+  cart.push({ name, price, image });
+  renderCart();
+  openCart();
+}
+
+function renderCart() {
+  const cartItems = document.getElementById("cartItems");
+  cartItems.innerHTML = "";
+
+  let total = 0;
+
+  cart.forEach((item, index) => {
+    total += item.price;
+    cartItems.innerHTML += `
+      <div class="cart-item">
+        <img src="${item.image}">
+        <div>
+          <p>${item.name}</p>
+          <strong>₹${item.price}</strong><br>
+          <button onclick="removeItem(${index})">Remove</button>
+        </div>
+      </div>
+    `;
+  });
+
+  document.getElementById("cartTotal").innerText = total;
+}
+
+function removeItem(index) {
+  cart.splice(index, 1);
+  renderCart();
+}
+  </script>
+
+  <script>
+let cart = [];
+
+function openCart() {
+  document.getElementById("cartPanel").classList.add("active");
+  document.getElementById("cartOverlay").style.display = "block";
+}
+
+function closeCart() {
+  document.getElementById("cartPanel").classList.remove("active");
+  document.getElementById("cartOverlay").style.display = "none";
+}
+
+function addToCart(name, price, image) {
+  cart.push({ name, price, image });
+  renderCart();
+  openCart();
+}
+
+function renderCart() {
+  const cartItems = document.getElementById("cartItems");
+  cartItems.innerHTML = "";
+
+  let total = 0;
+
+  cart.forEach((item, index) => {
+    total += item.price;
+    cartItems.innerHTML += `
+      <div class="cart-item">
+        <img src="${item.image}">
+        <div>
+          <p>${item.name}</p>
+          <strong>₹${item.price}</strong><br>
+          <button onclick="removeItem(${index})">Remove</button>
+        </div>
+      </div>
+    `;
+  });
+
+  document.getElementById("cartTotal").innerText = total;
+}
+
+function removeItem(index) {
+  cart.splice(index, 1);
+  renderCart();
+}
+</script>
   
 </body>
 </html>
