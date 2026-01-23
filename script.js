@@ -33,6 +33,20 @@ function renderProducts() {
 function addToCart(productId) {
     const product = products.find(p => p.id === productId);
     cart.push(product);
+    localStorage.setItem('urbanCart', JSON.stringify(cart));
+    updateCartCount();
+
+    // Toast Notification logic
+    const toast = document.getElementById("toast");
+    toast.innerText = `${product.name} added to cart!`;
+    toast.className = "show";
+    
+    // 3 second baad hide kar do
+    setTimeout(function(){ 
+        toast.className = toast.className.replace("show", ""); 
+    }, 3000);
+}
+
     
     // Save to LocalStorage
     localStorage.setItem('urbanCart', JSON.stringify(cart));
