@@ -120,6 +120,45 @@
     <button class="checkout-btn">Checkout</button>
   </div>
 </div>
+
+  <script>
+let cart = [];
+let count = 0;
+
+function openCart() {
+  document.getElementById("cartPanel").classList.add("active");
+  document.getElementById("cartOverlay").style.display = "block";
+}
+
+function closeCart() {
+  document.getElementById("cartPanel").classList.remove("active");
+  document.getElementById("cartOverlay").style.display = "none";
+}
+
+function addToCart(name, price) {
+  cart.push({ name, price });
+  count++;
+  document.getElementById("cartCount").innerText = count;
+  renderCart();
+}
+
+function renderCart() {
+  const items = document.getElementById("cartItems");
+  items.innerHTML = "";
+  let total = 0;
+
+  cart.forEach(item => {
+    total += item.price;
+    items.innerHTML += `
+      <div class="cart-item">
+        ${item.name} – ₹${item.price}
+      </div>
+    `;
+  });
+
+  document.getElementById("cartTotal").innerText = total;
+}
+  </script>
   
 </body>
 </html>
