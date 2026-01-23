@@ -55,3 +55,4 @@ body.dark-mode .hero { background-color: #1a1a1a; }
     cursor: pointer; border: none; background: #eee; padding: 5px 10px; border-radius: 20px; font-size: 14px;
 }
 body.dark-mode #theme-toggle { background: #333; color: #fff; }
+
