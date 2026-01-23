@@ -389,3 +389,7 @@ body {
   border: none;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
