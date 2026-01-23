@@ -114,3 +114,12 @@ function searchProducts() {
         container.innerHTML = `<h3 style="grid-column: 1/-1; text-align: center; padding: 50px;">Oops! Aisa kuch nahi mila. 😅</h3>`;
     }
 }
+
+            window.addEventListener('load', () => {
+    const loader = document.getElementById('loader');
+    setTimeout(() => {
+        loader.style.opacity = '0';
+        setTimeout(() => loader.style.display = 'none', 500);
+    }, 1000); // 1 second tak dikhayega
+});
+
