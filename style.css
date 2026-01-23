@@ -110,3 +110,61 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* NAVBAR */
+.navbar {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.nav-links a {
+  margin-left: 20px;
+  font-size: 14px;
+  color: #111;
+  text-decoration: none;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 1px;
+  background: #111;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* MOBILE NAV */
+@media (max-width: 768px) {
+  .nav-links {
+    font-size: 13px;
+  }
+
+  .nav-links a {
+    margin-left: 12px;
+  }
+}
