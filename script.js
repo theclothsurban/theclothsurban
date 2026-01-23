@@ -90,3 +90,27 @@ window.addEventListener('DOMContentLoaded', () => {
         if(themeBtn) themeBtn.innerText = "☀️ Light";
     }
 });
+
+function searchProducts() {
+    const query = document.getElementById('product-search').value.toLowerCase();
+    const container = document.getElementById('product-container');
+    
+    // Products filter karein naam ke basis par
+    const filteredProducts = products.filter(product => 
+        product.name.toLowerCase().includes(query)
+    );
+
+    // Filtered items ko dikhane ke liye grid update karein
+    if (filteredProducts.length > 0) {
+        container.innerHTML = filteredProducts.map(product => `
+            <div class="product-card">
+                <img src="${product.img}" alt="${product.name}">
+                <h3>${product.name}</h3>
+                <p>₹${product.price}</p>
+                <button class="btn-add" onclick="addToCart(${product.id})">Add to Cart</button>
+            </div>
+        `).join('');
+    } else {
+        container.innerHTML = `<h3 style="grid-column: 1/-1; text-align: center; padding: 50px;">Oops! Aisa kuch nahi mila. 😅</h3>`;
+    }
+}
