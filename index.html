@@ -3,47 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Cloths Urban | Home</title>
+    <title>The Cloths Urban | Streetwear Rebellion</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-<div id="loader">
-    <div class="spinner"></div>
-    <p>THE CLOTHS URBAN</p>
-</div>
-    
-    <nav>
-    <div class="logo"><h2>The Cloths Urban</h2></div>
-    <div class="nav-links">
-        <button id="theme-toggle" style="margin-right: 10px;">🌙 Mode</button> 
-        
-        <a href="index.html">Home</a>
-        <a href="cart.html" class="cart-icon">🛒 Cart (<span id="cart-count">0</span>)</a>
-    </div>
+
+    <nav class="navbar">
+        <div class="logo">THE CLOTHS <span>URBAN</span></div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">Collections</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
     </nav>
-    
 
     <header class="hero">
-        <h1>Elevate Your Streetwear</h1>
-        <p>Premium Quality. Urban Style.</p>
+        <div class="hero-content">
+            <h1>STREETWEAR FOR THE <br>BOLD GENERATION</h1>
+            <p>High-quality drops. Limited editions. Pure urban vibe.</p>
+            <a href="#shop" class="cta-btn">SHOP THE DROP</a>
+        </div>
     </header>
 
-    <div class="search-container">
-    <input type="text" id="product-search" placeholder="Search for outfits (e.g. Hoodie)..." onkeyup="searchProducts()">
-    </div>
-    
-    <div class="container">
-        <h2 style="text-align: center; margin-bottom: 30px;">Featured Products</h2>
-        <div class="product-grid" id="product-container">
+    <section id="shop" class="products">
+        <h2 class="section-title">New Arrivals</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1558191053-8edcb01e1da3?auto=format&fit=crop&q=80&w=500');"></div>
+                <h3>Urban Hoodie v1</h3>
+                <p>₹1,499</p>
+                <button class="buy-btn">Add to Cart</button>
             </div>
-    </div>
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&q=80&w=500');"></div>
+                <h3>Oversized Tee</h3>
+                <p>₹899</p>
+                <button class="buy-btn">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?auto=format&fit=crop&q=80&w=500');"></div>
+                <h3>Street Joggers</h3>
+                <p>₹1,299</p>
+                <button class="buy-btn">Add to Cart</button>
+            </div>
+        </div>
+    </section>
 
-    <footer>
-        <p>&copy; 2026 The Cloths Urban | <a href="contact.html">Contact Us</a></p>
-    </footer>
-<div id="toast">Item added to your collection! 👕</div>
-    
-    <script src="script.js"></script>
 </body>
 </html>
