@@ -444,3 +444,53 @@ tr:hover { background: #222; }
     padding: 12px;
 }
 
+/* --- Mobile Responsive Fixes --- */
+@media (max-width: 768px) {
+    /* 1. Hero Text ko readable banane ke liye */
+    .hero-content h1 {
+        font-size: 2.5rem !important; /* Font size chota kiya mobile ke liye */
+        line-height: 1.1;
+        text-shadow: 3px 3px 15px rgba(0,0,0,1); /* Dark shadow for contrast */
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+        background: rgba(0, 0, 0, 0.4); /* Text ke piche halka black box */
+        display: inline-block;
+        padding: 5px 10px;
+    }
+
+    /* 2. Navigation bar ko saaf karne ke liye */
+    .navbar {
+        padding: 15px 5%;
+    }
+
+    .nav-links {
+        display: none; /* Mobile par list chupa di (Clean look) */
+    }
+
+    /* 3. Product Cards ko ek ke niche ek dikhane ke liye */
+    .product-grid {
+        grid-template-columns: 1fr; /* Single column layout */
+        gap: 20px;
+    }
+
+    .product-img {
+        height: 300px; /* Mobile par image height thodi kam */
+    }
+
+    /* 4. Table (Size Guide) ko mobile par scrollable banane ke liye */
+    .table-container {
+        overflow-x: auto;
+    }
+
+    table {
+        min-width: 500px; /* Force table to scroll instead of squishing */
+    }
+
+    /* 5. Contact Section fix */
+    .contact-container {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+}
