@@ -48,3 +48,31 @@ function updateCartCount() {
         countElement.innerText = cart.length;
     }
 }
+
+// ... (Purana code: products array, addToCart function, etc.) ...
+
+// --- YAHAN SE STEP C KA CODE SHURU HOTA HAI ---
+
+const themeBtn = document.getElementById('theme-toggle');
+
+// 1. Click hone par theme badlo
+if (themeBtn) {
+    themeBtn.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        
+        // Check karo ki abhi kaunsa mode hai aur save karo
+        const isDark = document.body.classList.contains('dark-mode');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        
+        // Button ka text bhi badal sakte hain
+        themeBtn.innerText = isDark ? "☀️ Light" : "🌙 Dark";
+    });
+}
+
+// 2. Page load hote hi check karo ki user ne pehle kya select kiya tha
+window.addEventListener('DOMContentLoaded', () => {
+    if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark-mode');
+        if(themeBtn) themeBtn.innerText = "☀️ Light";
+    }
+});
