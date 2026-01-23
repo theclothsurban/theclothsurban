@@ -419,3 +419,23 @@ html {
   scroll-behavior: smooth;
 }
 
+
+.checkout {
+  max-width: 500px;
+  margin: 60px auto;
+  padding: 0 16px;
+  text-align: center;
+}
+
+.checkout h2 {
+  margin-bottom: 30px;
+}
+
+.checkout-form input,
+.checkout-form select {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 14px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
