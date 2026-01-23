@@ -89,7 +89,22 @@ body {
   background: black;
   color: white;
   font-size: 14px;
-  cursor: pointer;
+  cursor: pointer:
+}
+.add-btn,
+.checkout-btn {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.add-btn:hover,
+.checkout-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+#cartPanel {
+  transition: right 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
   /* ABOUT */
 .about {
