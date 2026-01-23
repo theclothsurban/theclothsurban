@@ -80,6 +80,43 @@ body.dark-mode #product-search {
     margin-bottom: 30px;
 }
 
+/* Custom Scrollbar - Professional Touch */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #000;
+}
+::-webkit-scrollbar-thumb {
+    background: #ff3e3e;
+    border-radius: 10px;
+}
+
+/* Glassmorphism for Navbar */
+.navbar {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Smooth Image Reveal Animation */
+.product-card img {
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.product-card:hover img {
+    transform: scale(1.05); /* Image halki si zoom hogi */
+}
+
+/* Gradient Text for Headlines */
+.hero-content h1 {
+    background: linear-gradient(to right, #fff, #888);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
+}
+
+
 /* Full Screen Loader */
 #loader {
     position: fixed;
