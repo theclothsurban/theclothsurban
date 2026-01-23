@@ -193,3 +193,25 @@ body {
     margin-left: 12px;
   }
 }
+/* CONTACT */
+.contact {
+  padding: 70px 16px;
+}
+
+.contact-container {
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.contact p {
+  font-size: 15px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
