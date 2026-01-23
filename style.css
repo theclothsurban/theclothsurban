@@ -42,3 +42,16 @@ nav {
 
 footer { text-align: center; padding: 40px; background: #222; color: #fff; margin-top: 50px; }
 footer a { color: #fff; }
+
+/* Dark Mode Colors */
+body.dark-mode { background-color: #121212; color: #ffffff; }
+body.dark-mode nav { background-color: #1f1f1f; color: #fff; }
+body.dark-mode .product-card { background-color: #1f1f1f; border-color: #333; }
+body.dark-mode .nav-links a { color: #fff; }
+body.dark-mode .hero { background-color: #1a1a1a; }
+
+/* Toggle Button Style */
+#theme-toggle {
+    cursor: pointer; border: none; background: #eee; padding: 5px 10px; border-radius: 20px; font-size: 14px;
+}
+body.dark-mode #theme-toggle { background: #333; color: #fff; }
