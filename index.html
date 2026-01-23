@@ -12,14 +12,25 @@
 <body>
 
     <nav class="navbar">
-        <div class="logo">THE CLOTHS <span>URBAN</span></div>
-        <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Shop</a></li>
-            <li><a href="#">Collections</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
+    <div class="logo">THE CLOTHS <span>URBAN</span></div>
+    
+    <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">Collections</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
     </nav>
+    
+    
+
+        
 
     <header class="hero">
         <div class="hero-content">
@@ -146,7 +157,18 @@
             <p>&copy; 2026 The Cloths Urban. All Rights Reserved.</p>
         </div>
     </footer>
-    
+    <script>
+    const menu = document.querySelector('#mobile-menu');
+    const menuLinks = document.querySelector('.nav-links');
+
+    menu.addEventListener('click', function() {
+        menuLinks.classList.toggle('active');
+        
+        // Icon animation (X banana)
+        menu.classList.toggle('is-active');
+    });
+    </script>
+        
 </body>
 </html>
 
