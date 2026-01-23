@@ -187,3 +187,98 @@ body.dark-mode .hero { background-color: #1a1a1a; }
 }
 body.dark-mode #theme-toggle { background: #333; color: #fff; }
 
+/* Footer Styling */
+.main-footer {
+    background: #000;
+    padding: 80px 5% 20px;
+    border-top: 1px solid #222;
+    margin-top: 100px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.footer-about p {
+    color: #888;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.footer-links h4, .footer-social h4 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.footer-links ul { list-style: none; }
+.footer-links li { margin-bottom: 10px; }
+.footer-links a {
+    color: #888;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-links a:hover { color: #ff3e3e; padding-left: 5px; }
+
+.social-icons a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: #1a1a1a;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    background: #ff3e3e;
+    transform: rotate(360deg);
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #222;
+    padding-top: 20px;
+    color: #555;
+    font-size: 0.8rem;
+}
+
+/* Slider Section Adjustments */
+.slider-container {
+    height: 70vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active { opacity: 1; position: relative; }
+
+.slide-content { text-align: center; }
+.slide-content h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 4rem;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+               }
+
