@@ -175,3 +175,64 @@ footer {
     width: auto;
     display: block;
 }
+
+.newsletter {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.newsletter h2 {
+    letter-spacing: 4px;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.newsletter p {
+    color: #ccc;
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+.subscribe-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.subscribe-form input {
+    padding: 12px 20px;
+    width: 70%;
+    border: 1px solid #444;
+    background: transparent;
+    color: white;
+    outline: none;
+}
+
+.subscribe-form button {
+    padding: 12px 30px;
+    background-color: white;
+    color: black;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.subscribe-form button:hover {
+    background-color: #ddd;
+}
+
+/* Mobile par input aur button ek ke niche ek ho jayein */
+@media (max-width: 600px) {
+    .subscribe-form {
+        flex-direction: column;
+    }
+    .subscribe-form input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
