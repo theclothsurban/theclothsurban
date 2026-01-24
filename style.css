@@ -145,3 +145,27 @@ footer {
         padding: 20px;
     }
 }
+
+.contact-section {
+    padding: 60px 20px;
+    background-color: #ffffff;
+    border-top: 1px solid #eee;
+    text-align: center;
+}
+
+.contact-section h2 {
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: #555;
+    font-weight: bold;
+    margin: 0 10px;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    color: #000;
+}
