@@ -1,33 +1,117 @@
-body {
-    font-family: Arial, sans-serif;
+* {
     margin: 0;
-    text-align: center;
-    background-color: #f4f4f4;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-header {
-    background-color: #1a1a1a;
-    color: gold;
-    padding: 20px;
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
 }
 
-nav a {
-    color: white;
-    margin: 0 15px;
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
     text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    transition: 0.3s;
 }
 
+.nav-links a:hover {
+    color: #777;
+}
+
+/* Hero Section */
 .hero {
-    padding: 100px 20px;
-    background-color: white;
+    height: 80vh;
+    background: #111; /* Abhi black background hai, baad mein photo laga sakte hain */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
-button {
-    background-color: #1a1a1a;
-    color: gold;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
+.hero h1 {
+    font-size: 60px;
+    letter-spacing: 5px;
+    margin-bottom: 10px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 40px;
+    background: white;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Features */
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 80px 50px;
+    background: #fafafa;
+}
+
+.feature h3 {
     font-size: 18px;
+    margin-bottom: 10px;
 }
 
+/* Products Section */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 50px;
+}
+
+.placeholder-card {
+    height: 300px;
+    background: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px dashed #ccc;
+    color: #888;
+}
+
+footer {
+    padding: 30px;
+    background: #111;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+}
