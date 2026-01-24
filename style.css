@@ -169,3 +169,9 @@ footer {
 .social-links a:hover {
     color: #000;
 }
+
+.logo img {
+    max-height: 50px; /* Aap ise apne hisaab se chhota ya bada kar sakte hain */
+    width: auto;
+    display: block;
+}
