@@ -12,3 +12,10 @@ document.querySelector('.btn').addEventListener('click', function() {
         this.style.transform = "scale(1)";
     }, 100);
 });
+
+document.querySelector('.subscribe-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const email = this.querySelector('input').value;
+    alert("Shukriya! " + email + " hamari VIP list mein add ho gaya hai. Launch par aapko update mil jayega.");
+    this.reset();
+});
