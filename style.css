@@ -115,3 +115,33 @@ footer {
     text-align: center;
     font-size: 14px;
 }
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+    
+    .nav-links {
+        display: none; /* Mobile par menu chupa do, baad mein button banayenge */
+    }
+
+    .hero h1 {
+        font-size: 35px;
+        letter-spacing: 2px;
+    }
+
+    .features {
+        flex-direction: column;
+        padding: 40px 20px;
+    }
+
+    .feature {
+        margin-bottom: 30px;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr; /* Mobile par ek line mein ek product */
+        padding: 20px;
+    }
+}
