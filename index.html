@@ -3,25 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TheClothsUrban | Fashion Store</title>
+    <title>TheClothsUrban | Premium Streetwear</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <h1>TheClothsUrban</h1>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">Collection</a>
-            <a href="#">Contact</a>
-        </nav>
+    <nav class="navbar">
+        <div class="logo">TheClothsUrban</div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">New Arrivals</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>URBAN ELEGANCE</h1>
+            <p>Define your style with our premium collection.</p>
+            <a href="#products" class="btn">Explore Collection</a>
+        </div>
     </header>
 
-    <section class="hero">
-        <h2>Upgrade Your Style</h2>
-        <p>Latest clothes for the urban lifestyle.</p>
-        <button onclick="welcome()">Shop Now</button>
+    <section class="features">
+        <div class="feature">
+            <h3>Premium Quality</h3>
+            <p>Crafted with the finest fabrics.</p>
+        </div>
+        <div class="feature">
+            <h3>Fast Delivery</h3>
+            <p>Pan India shipping within 3-5 days.</p>
+        </div>
+        <div class="feature">
+            <h3>Urban Fit</h3>
+            <p>Designed for the modern generation.</p>
+        </div>
     </section>
+
+    <section id="products" class="product-grid">
+        <div class="placeholder-card">Product Coming Soon...</div>
+        <div class="placeholder-card">Product Coming Soon...</div>
+        <div class="placeholder-card">Product Coming Soon...</div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 TheClothsUrban. All Rights Reserved.</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
