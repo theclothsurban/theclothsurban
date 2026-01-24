@@ -1,3 +1,4 @@
+/* Reset & Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -5,8 +6,9 @@
 }
 
 body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    color: #333;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #ffffff;
+    color: #1a1a1a;
     line-height: 1.6;
 }
 
@@ -15,263 +17,140 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 50px;
+    padding: 2rem 5%;
     background: #fff;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #f0f0f0;
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
 .logo {
-    font-size: 24px;
-    font-weight: bold;
-    letter-spacing: 2px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: -1px;
+    text-transform: lowercase;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-}
-
-.nav-links li {
-    margin-left: 30px;
+    gap: 2.5rem;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: #000;
-    font-weight: 500;
+    color: #1a1a1a;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 400;
     transition: 0.3s;
 }
 
 .nav-links a:hover {
-    color: #777;
+    color: #888;
 }
 
 /* Hero Section */
 .hero {
     height: 80vh;
-    background: #111; /* Abhi black background hai, baad mein photo laga sakte hain */
-    color: white;
+    background: #f7f7f7; /* Yahan aap image bhi laga sakte ho */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    padding: 0 5%;
 }
 
-.hero h1 {
-    font-size: 60px;
-    letter-spacing: 5px;
-    margin-bottom: 10px;
+.hero-content h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    font-weight: 600;
+    margin: 1rem 0;
 }
 
-.btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 15px 40px;
-    background: white;
-    color: black;
-    text-decoration: none;
-    font-weight: bold;
+.subtitle {
     text-transform: uppercase;
-}
-
-/* Features */
-.features {
-    display: flex;
-    justify-content: space-around;
-    padding: 80px 50px;
-    background: #fafafa;
-}
-
-.feature h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-/* Products Section */
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    padding: 50px;
-}
-
-.placeholder-card {
-    height: 300px;
-    background: #eee;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px dashed #ccc;
+    letter-spacing: 5px;
+    font-size: 0.7rem;
     color: #888;
 }
 
-footer {
-    padding: 30px;
-    background: #111;
-    color: #fff;
-    text-align: center;
-    font-size: 14px;
-}
-
-/* Mobile Responsive Design */
-@media (max-width: 768px) {
-    .navbar {
-        padding: 15px 20px;
-    }
-    
-    .nav-links {
-        display: none; /* Mobile par menu chupa do, baad mein button banayenge */
-    }
-
-    .hero h1 {
-        font-size: 35px;
-        letter-spacing: 2px;
-    }
-
-    .features {
-        flex-direction: column;
-        padding: 40px 20px;
-    }
-
-    .feature {
-        margin-bottom: 30px;
-    }
-
-    .product-grid {
-        grid-template-columns: 1fr; /* Mobile par ek line mein ek product */
-        padding: 20px;
-    }
-}
-
-.contact-section {
-    padding: 60px 20px;
-    background-color: #ffffff;
-    border-top: 1px solid #eee;
-    text-align: center;
-}
-
-.contact-section h2 {
-    letter-spacing: 3px;
-    margin-bottom: 20px;
-}
-
-.social-links a {
-    text-decoration: none;
-    color: #555;
-    font-weight: bold;
-    margin: 0 10px;
-    transition: 0.3s;
-}
-
-.social-links a:hover {
-    color: #000;
-}
-
-.logo img {
-    max-height: 50px; /* Aap ise apne hisaab se chhota ya bada kar sakte hain */
-    width: auto;
-    display: block;
-}
-
-.newsletter {
+.btn-primary {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 1rem 2.5rem;
     background-color: #1a1a1a;
-    color: white;
-    padding: 80px 20px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.4s;
+}
+
+.btn-primary:hover {
+    background-color: #333;
+    transform: translateY(-3px);
+}
+
+/* Product Grid */
+.featured-products {
+    padding: 5rem 5%;
+}
+
+.section-title {
+    margin-bottom: 3rem;
     text-align: center;
 }
 
-.newsletter h2 {
-    letter-spacing: 4px;
-    font-size: 28px;
-    margin-bottom: 15px;
+.section-title h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
 }
 
-.newsletter p {
-    color: #ccc;
-    margin-bottom: 30px;
-    font-size: 14px;
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
 }
 
-.subscribe-form {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-.subscribe-form input {
-    padding: 12px 20px;
-    width: 70%;
-    border: 1px solid #444;
-    background: transparent;
-    color: white;
-    outline: none;
-}
-
-.subscribe-form button {
-    padding: 12px 30px;
-    background-color: white;
-    color: black;
-    border: none;
-    font-weight: bold;
+.product-card {
     cursor: pointer;
-    transition: 0.3s;
 }
 
-.subscribe-form button:hover {
-    background-color: #ddd;
+.product-img {
+    background: #f0f0f0;
+    overflow: hidden;
+    margin-bottom: 1rem;
 }
 
-/* Mobile par input aur button ek ke niche ek ho jayein */
-@media (max-width: 600px) {
-    .subscribe-form {
-        flex-direction: column;
-    }
-    .subscribe-form input {
-        width: 100%;
-        margin-bottom: 10px;
-    }
+.product-img img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    transition: transform 0.8s ease;
 }
 
-.whatsapp-float {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #25d366;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 50px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-    font-weight: bold;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    z-index: 1000;
-    transition: 0.3s;
+.product-card:hover img {
+    transform: scale(1.05);
 }
 
-.whatsapp-float img {
-    width: 25px;
-    height: 25px;
+.product-info h3 {
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin-bottom: 0.3rem;
 }
 
-.whatsapp-float:hover {
-    transform: scale(1.1);
-    background-color: #128c7e;
+.price {
+    font-size: 0.85rem;
+    color: #666;
 }
 
-/* Mobile par sirf icon dikhega, text nahi (taki screen saaf rahe) */
-@media (max-width: 600px) {
-    .whatsapp-float span {
-        display: none;
-    }
-    .whatsapp-float {
-        padding: 12px;
-        border-radius: 50%;
-    }
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hero-content h1 { font-size: 2.5rem; }
 }
