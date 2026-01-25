@@ -1,75 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>theclothsurban | Urban Streetwear</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>theclothsurban | Premium Urban Wear</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <nav>
+        <div class="logo">THECLOTHSURBAN</div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#collection">Collection</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button id="theme-toggle">🌙 Dark Mode</button>
+    </nav>
 
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <div class="logo">theclothsurban</div>
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#products">Products</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Upgrade Your Urban Style</h1>
+            <p>Premium quality vibes for the modern generation.</p>
+            <a href="#collection" class="cta-btn">Shop Now</a>
+        </div>
+    </header>
 
-  <!-- HERO SECTION -->
-  <section class="hero" id="home">
-    <h1>Urban Streetwear Redefined</h1>
-    <p>Premium fashion for the modern generation</p>
-    <a href="#products" class="btn">Shop Collection</a>
-  </section>
+    <section id="collection" class="products">
+        <h2 class="section-title">Premium Collection</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="img-box">
+                    <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=500&q=80" alt="T-Shirt">
+                </div>
+                <h3>Urban Premium Tee</h3>
+                <p>₹1,299</p>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+            <div class="product-card">
+                <div class="img-box">
+                    <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=500&q=80" alt="Hoodie">
+                </div>
+                <h3>Classic Black Hoodie</h3>
+                <p>₹2,499</p>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+        </div>
+    </section>
 
-  <!-- PRODUCTS -->
-  <section class="products" id="products">
-    <h2>Our Collection</h2>
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <h2>Contact Our Premium Support</h2>
+            <form id="contact-form">
+                <input type="text" placeholder="Aapka Naam" required>
+                <input type="email" placeholder="Email Address" required>
+                <textarea placeholder="Aapka Message" rows="5"></textarea>
+                <button type="submit" class="send-btn">Message Bheinjein</button>
+            </form>
+        </div>
+    </section>
 
-    <div class="product-grid">
-      <div class="card">
-        <h3>Oversized T-Shirts</h3>
-        <p>₹799 onwards</p>
-      </div>
-
-      <div class="card">
-        <h3>Street Hoodies</h3>
-        <p>₹1499 onwards</p>
-      </div>
-
-      <div class="card">
-        <h3>Urban Jeans</h3>
-        <p>₹1799 onwards</p>
-      </div>
+    <div id="payment-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h3>Scan & Pay</h3>
+            <p>theclothsurban Official QR</p>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=paytmqr2810050501011v97u11j6o3r@paytm" alt="QR Code" class="qr-img">
+            <p class="modal-note">Payment ke baad screenshot 7046290518 par bhejein.</p>
+            <button class="whatsapp-btn" onclick="sendToWhatsApp()">Send Screenshot</button>
+        </div>
     </div>
-  </section>
 
-  <!-- ABOUT -->
-  <section class="about" id="about">
-    <h2>About theclothsurban</h2>
-    <p>
-      theclothsurban is a modern streetwear brand focused on
-      premium quality, bold designs, and urban culture.
-    </p>
-  </section>
+    <a href="https://wa.me/917046290518" class="whatsapp-float" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Chat">
+    </a>
 
-  <!-- CONTACT -->
-  <section class="contact" id="contact">
-    <h2>Order Now</h2>
-    <p>DM us on WhatsApp to place your order</p>
-    <a href="https://wa.me/917046290518" class="btn">WhatsApp Us</a>
-  </section>
+    <footer>
+        <p>© 2026 theclothsurban | Designed for Premium Vibes</p>
+    </footer>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2026 theclothsurban. All rights reserved.</p>
-  </footer>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
-    </html>
-    
+</html>
