@@ -39,3 +39,13 @@ body.dark-theme .cta-btn, body.dark-theme .send-btn, body.dark-theme .buy-btn { 
 .whatsapp-float img { width: 60px; }
 footer { padding: 40px; text-align: center; opacity: 0.6; font-size: 12px; }
   
+#trust {
+  background: #f7f7f7;
+}
+
+.trust-box {
+  max-width: 500px;
+  margin: auto;
+  font-size: 16px;
+  line-height: 2;
+}
