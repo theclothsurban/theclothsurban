@@ -1,93 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>theclothsurban | Premium Urban Wear</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Theclothsurban</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
-        <div class="logo">THECLOTHSURBAN</div>
-        <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#collection">Collection</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <button id="theme-toggle">🌙 Dark Mode</button>
-    </nav>
 
-    <header class="hero">
-        <div class="hero-content">
-            <h1>Upgrade Your Urban Style</h1>
-            <p>Premium quality vibes for the modern generation.</p>
-            <a href="#collection" class="cta-btn">Shop Now</a>
-        </div>
-    </header>
+<header>
+  <h1>Theclothsurban</h1>
+  <p>Urban Men’s Fashion</p>
+  <a class="btn" href="#shop">Shop Now</a>
+</header>
 
-    <section id="collection" class="products">
-        <h2 class="section-title">Premium Collection</h2>
-        <div class="product-grid">
-            <div class="product-card">
-                <div class="img-box">
-                    <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=500&q=80" alt="T-Shirt">
-                </div>
-                <h3>Urban Premium Tee</h3>
-                <p>₹1,299</p>
-                <button class="buy-btn">Buy Now</button>
-            </div>
-            <div class="product-card">
-                <div class="img-box">
-                    <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=500&q=80" alt="Hoodie">
-                </div>
-                <h3>Classic Black Hoodie</h3>
-                <p>₹2,499</p>
-                <button class="buy-btn">Buy Now</button>
-            </div>
-        </div>
-    </section>
+<section id="shop">
+  <h2>Collection</h2>
 
-    <section id="contact" class="contact-section">
-        <div class="contact-container">
-            <h2>Contact Our Premium Support</h2>
-            <form id="contact-form">
-                <input type="text" placeholder="Aapka Naam" required>
-                <input type="email" placeholder="Email Address" required>
-                <textarea placeholder="Aapka Message" rows="5"></textarea>
-                <button type="submit" class="send-btn">Message Bheinjein</button>
-            </form>
-        </div>
-    </section>
+  <div class="products">
 
-    <section id="trust">
-  <h2>Why Choose Theclothsurban?</h2>
-  <div class="trust-box">
-    <p>✔ 100% Genuine Men’s Wear</p>
-    <p>✔ Premium Quality Fabric</p>
-    <p>✔ Trusted WhatsApp Orders</p>
-    <p>✔ Fast & Safe Delivery</p>
-    <p>✔ Support Available on WhatsApp</p>
-  </div>
-        </section>
-    
-    <div id="payment-modal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <button class="whatsapp-btn" onclick="sendToWhatsApp()">order on WhatsApp</button>
-        </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab" alt="T-Shirt">
+      <h3>Urban Spider Tee</h3>
+      <p>₹999</p>
+      <a href="https://wa.me/917046290518?text=Hello%20Theclothsurban!%20I%20want%20to%20order%20Urban%20Spider%20Tee.%20Please%20guide%20me." target="_blank">
+        Order on WhatsApp
+      </a>
     </div>
 
-    <a href="https://wa.me/917046290518?text=Hello%20Theclothsurban!%20I%20want%20to%20place%20an%20order.%20Please%20share%20the%20next%20steps." target="_blank">
-  Order on WhatsApp
-    </a>
-    
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1618354691373-6a8d1e4b3f8f" alt="Hoodie">
+      <h3>Classic Black Hoodie</h3>
+      <p>₹2499</p>
+      <a href="https://wa.me/917046290518?text=Hello%20Theclothsurban!%20I%20want%20to%20order%20Classic%20Black%20Hoodie.%20Please%20guide%20me." target="_blank">
+        Order on WhatsApp
+      </a>
+    </div>
 
-    <footer>
-        <p>© 2026 theclothsurban | Designed for Premium Vibes</p>
-        <p>Trusted by Urban Men | Quality You Can Feel</p>
-    </footer>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246" alt="Jeans">
+      <h3>Men Blue Jeans</h3>
+      <p>₹1599</p>
+      <a href="https://wa.me/917046290518?text=Hello%20Theclothsurban!%20I%20want%20to%20order%20Men%20Blue%20Jeans.%20Please%20guide%20me." target="_blank">
+        Order on WhatsApp
+      </a>
+    </div>
 
-    <script src="script.js"></script>
+  </div>
+</section>
+
+<section id="trust">
+  <h2>Why Choose Theclothsurban?</h2>
+  <p>✔ 100% Genuine Men’s Wear</p>
+  <p>✔ Premium Quality Fabric</p>
+  <p>✔ Direct WhatsApp Orders</p>
+  <p>✔ Safe & Trusted Brand</p>
+</section>
+
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p>📞 7046290518</p>
+  <p>📧 theclothsurban@gmail.com</p>
+</section>
+
+<footer>
+  <p>© 2026 Theclothsurban</p>
+</footer>
+
 </body>
 </html>
