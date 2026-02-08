@@ -1,71 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Theclothsurban</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>theclothsurban | Official Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --gold: #b08d57; --black: #111; --gray: #f9f9f9; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; background: #fff; color: var(--black); -webkit-font-smoothing: antialiased; }
+
+        /* Navigation - Logo Image Hata Di Hai */
+        nav { 
+            display: flex; justify-content: space-between; align-items: center; 
+            padding: 0 5%; height: 70px; background: #fff; position: sticky; top: 0; z-index: 1000;
+            border-bottom: 1px solid #eee;
+        }
+        .logo-container { display: flex; align-items: center; text-decoration: none; color: #000; cursor: pointer; }
+        .logo-text { font-family: 'Playfair Display'; font-size: 16px; font-weight: 900; line-height: 1.1; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* Page System */
+        .page { display: none; padding-bottom: 50px; min-height: 80vh; animation: fadeIn 0.3s ease; }
+        .page.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        /* Product Grid */
+        .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; padding: 20px 4%; }
+        .card { background: #fff; border: 1px solid #f2f2f2; border-radius: 6px; overflow: hidden; display: flex; flex-direction: column; }
+        .img-wrap { width: 100%; aspect-ratio: 3/4; cursor: pointer; }
+        .img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+        .info { padding: 12px; text-align: center; flex-grow: 1; display: flex; flex-direction: column; }
+        .title { font-size: 11px; font-weight: 400; color: #666; height: 32px; overflow: hidden; margin-bottom: 5px; }
+        .price { font-size: 15px; font-weight: 700; color: var(--gold); margin-bottom: 12px; }
+        .wa-card-btn { background: #000; color: #fff; text-decoration: none; font-size: 10px; font-weight: 600; padding: 10px; border-radius: 4px; text-transform: uppercase; }
+
+        /* Content Styles */
+        .content-wrap { padding: 40px 8%; line-height: 1.8; }
+        .content-wrap h1 { font-family: 'Playfair Display'; font-size: 26px; margin-bottom: 25px; border-bottom: 2px solid var(--gold); display: inline-block; }
+        .content-wrap h3 { font-size: 15px; margin-top: 20px; color: var(--gold); text-transform: uppercase; }
+        .content-wrap p, .content-wrap li { font-size: 13px; color: #555; margin-bottom: 10px; }
+        .back-home { margin-top: 30px; display: inline-block; padding: 10px 20px; background: #000; color: #fff; text-decoration: none; font-size: 11px; cursor: pointer; }
+
+        /* Footer */
+        .full-footer { padding: 50px 8%; border-top: 1px solid #eee; margin-top: 50px; background: #fff; }
+        .footer-grid { display: grid; grid-template-columns: 1fr; gap: 30px; }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 10px; }
+        .footer-links a { text-decoration: none; color: #666; font-size: 13px; cursor: pointer; border-bottom: 1px solid transparent; }
+        .footer-links a:hover { color: #000; border-bottom: 1px solid #000; }
+        
+        .newsletter h3 { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 15px; }
+        .n-input { width: 100%; padding: 12px; border: 1px solid #ddd; margin-bottom: 10px; outline: none; }
+        .sub-btn { background: #000; color: #fff; width: 100%; padding: 12px; border: none; font-weight: 700; text-transform: uppercase; font-size: 10px; cursor: pointer; }
+
+        /* Modal */
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 5000; align-items: center; justify-content: center; padding: 20px; }
+        .modal-inner { background: #fff; width: 100%; max-width: 350px; border-radius: 8px; overflow: hidden; }
+        .modal-img { width: 100%; height: 320px; background-size: cover; background-position: center; }
+        .modal-data { padding: 20px; text-align: center; }
+
+        @media (min-width: 768px) { 
+            .grid { grid-template-columns: repeat(4, 1fr); }
+            .footer-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+    </style>
 </head>
 <body>
 
-<header>
-  <h1>Theclothsurban</h1>
-  <p>Urban Men’s Fashion</p>
-  <a class="btn" href="#shop">Shop Now</a>
-</header>
+    <nav>
+        <div class="logo-container" onclick="showPage('home-page')">
+            <span class="logo-text">THE CLOTHS URBAN</span>
+        </div>
+        <div class="nav-tools">
+            <i class="fas fa-search" onclick="showPage('search-page')" style="cursor:pointer"></i>
+            <i class="fas fa-bars" style="margin-left:15px; cursor:pointer"></i>
+        </div>
+    </nav>
 
-<section id="shop">
-  <h2>Collection</h2>
-
-  <div class="products">
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab" alt="T-Shirt">
-      <h3>Urban Spider Tee</h3>
-      <p>₹999</p>
-      <a href="https://wa.me/917046290518?text=Hello%20Theclothsurban!%20I%20want%20to%20order%20Urban%20Spider%20Tee.%20Please%20guide%20me." target="_blank">
-        Order on WhatsApp
-      </a>
+    <div id="home-page" class="page active">
+        <div class="grid" id="main-grid"></div>
     </div>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1618354691373-6a8d1e4b3f8f" alt="Hoodie">
-      <h3>Classic Black Hoodie</h3>
-      <p>₹2499</p>
-      <a href="https://wa.me/917046290518?text=Hello%20Theclothsurban!%20I%20want%20to%20order%20Classic%20Black%20Hoodie.%20Please%20guide%20me." target="_blank">
-        Order on WhatsApp
-      </a>
+    <div id="why-page" class="page">
+        <div class="content-wrap">
+            <h1>Why theclothsurban?</h1>
+            <h3>1. Premium Quality Only</h3>
+            <p>Hum sirf high-grade fabric use karte hain jo long-lasting aur comfortable hote hain.</p>
+            <h3>2. Urban Aesthetics</h3>
+            <p>Humara har design modern street culture ko dhyan mein rakh kar banaya jata hai.</p>
+            <h3>3. Direct Support</h3>
+            <p>Aap direct humse WhatsApp par baat karte hain aur sahi guide lete hain.</p>
+            <a onclick="showPage('home-page')" class="back-home">BACK TO SHOP</a>
+        </div>
     </div>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246" alt="Jeans">
-      <h3>Men Blue Jeans</h3>
-      <p>₹1599</p>
-      <a href="https://wa.me/917046290518?text=Hello%20Theclothsurban!%20I%20want%20to%20order%20Men%20Blue%20Jeans.%20Please%20guide%20me." target="_blank">
-        Order on WhatsApp
-      </a>
+    <div id="faq-page" class="page">
+        <div class="content-wrap">
+            <h1>Frequently Asked Questions</h1>
+            <h3>How do I track my order?</h3>
+            <p>Aap footer mein "Track Your Order" par click karke status check kar sakte hain.</p>
+            <h3>Payment Modes?</h3>
+            <p>Hum GPay, PhonePe, Cards aur COD accept karte hain.</p>
+            <a onclick="showPage('home-page')" class="back-home">BACK TO SHOP</a>
+        </div>
     </div>
 
-  </div>
-</section>
+    <div id="payment-page" class="page">
+        <div class="content-wrap">
+            <h1>Payment Details</h1>
+            <p>Hum sabhi major payment modes accept karte hain:</p>
+            <ul>
+                <li>• UPI (Google Pay, PhonePe)</li>
+                <li>• Credit/Debit Cards</li>
+                <li>• Cash on Delivery (₹100 extra)</li>
+            </ul>
+            <a onclick="showPage('home-page')" class="back-home">BACK TO SHOP</a>
+        </div>
+    </div>
 
-<section id="trust">
-  <h2>Why Choose Theclothsurban?</h2>
-  <p>✔ 100% Genuine Men’s Wear</p>
-  <p>✔ Premium Quality Fabric</p>
-  <p>✔ Direct WhatsApp Orders</p>
-  <p>✔ Safe & Trusted Brand</p>
-</section>
+    <div id="track-page" class="page">
+        <div class="content-wrap" style="text-align:center">
+            <h1>Track Order</h1>
+            <div style="max-width:400px; margin:0 auto; background:#f9f9f9; padding:20px; border-radius:8px;">
+                <input type="text" id="track-id" placeholder="Order ID" class="n-input">
+                <button onclick="trackOrder()" class="sub-btn">Track Now</button>
+                <p id="track-res" style="margin-top:15px; font-size:12px;"></p>
+            </div>
+        </div>
+    </div>
 
-<section id="contact">
-  <h2>Contact Us</h2>
-  <p>📞 7046290518</p>
-  <p>📧 theclothsurban@gmail.com</p>
-</section>
+    <div id="search-page" class="page">
+        <div class="content-wrap">
+            <input type="text" id="s-input" onkeyup="doSearch()" placeholder="Search..." class="n-input" style="font-size:22px; border:none; border-bottom:2px solid #000;">
+            <div class="grid" id="search-results"></div>
+        </div>
+    </div>
 
-<footer>
-  <p>© 2026 Theclothsurban</p>
-</footer>
+    <div class="full-footer">
+        <div class="footer-grid">
+            <div>
+                <h3 style="font-size:12px; margin-bottom:15px; text-transform:uppercase;">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a onclick="showPage('why-page')">Why Choose Us?</a></li>
+                    <li><a onclick="showPage('faq-page')">FAQs</a></li>
+                    <li><a onclick="showPage('payment-page')">Payment Details</a></li>
+                    <li><a onclick="showPage('track-page')">Track Your Order</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 style="font-size:12px; margin-bottom:15px; text-transform:uppercase;">Policies</h3>
+                <ul class="footer-links">
+                    <li><a onclick="showPage('home-page')">Shipping Policy</a></li>
+                    <li><a onclick="showPage('home-page')">Return & Exchange</a></li>
+                </ul>
+            </div>
+            <div class="newsletter">
+                <h3>Newsletter</h3>
+                <input type="email" placeholder="E-mail" class="n-input">
+                <button class="sub-btn">Subscribe</button>
+            </div>
+        </div>
+        <div style="margin-top:40px; text-align:center;">
+            <a href="https://instagram.com/theclothsurban" target="_blank" style="font-size:24px; color:#000;"><i class="fab fa-instagram"></i></a>
+            <p style="font-size:9px; color:#aaa; margin-top:20px;">© 2026 THE CLOTHS URBAN</p>
+        </div>
+    </div>
 
+    <div id="p-modal" class="modal">
+        <div class="modal-inner">
+            <div id="m-img" class="modal-img"></div>
+            <div class="modal-data">
+                <h2 id="m-title" style="font-family:'Playfair Display'; margin-bottom:5px;"></h2>
+                <span id="m-price" style="color:var(--gold); font-weight:700; display:block; margin-bottom:15px;"></span>
+                <a href="#" id="wa-link" class="wa-card-btn" style="padding:15px; display:block;">Order on WhatsApp</a>
+                <p onclick="closeM()" style="margin-top:15px; font-size:11px; text-decoration:underline; cursor:pointer">Close</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let items = [];
+        const S_ID = '1oLLc5XZQHpR6f1iW8YKTQ6LG6fOtf1S8ZFXWT3Nm4Bg';
+        const URL = `https://docs.google.com/spreadsheets/d/${S_ID}/gviz/tq?tqx=out:json`;
+
+        function showPage(id) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            window.scrollTo(0,0);
+        }
+
+        async function getData() {
+            try {
+                const r = await fetch(URL + '&cb=' + Math.random());
+                const t = await r.text();
+                const j = JSON.parse(t.substr(47).slice(0, -2));
+                items = j.table.rows.map(row => ({
+                    n: row.c[0] ? row.c[0].v : 'Urban Drop',
+                    p: row.c[1] ? row.c[1].v : '',
+                    i: row.c[2] ? row.c[2].v.trim() : '',
+                    c: row.c[3] ? row.c[3].v.trim() : 'New'
+                })).filter(x => x.i !== '');
+                render(items, 'main-grid');
+            } catch (e) { console.log("Error"); }
+        }
+
+        function render(arr, target) {
+            document.getElementById(target).innerHTML = arr.map(x => `
+                <div class="card">
+                    <div class="img-wrap" onclick="openM('${x.i}','${x.n}','${x.p}')">
+                        <img src="${x.i}">
+                    </div>
+                    <div class="info">
+                        <div class="title">${x.n}</div>
+                        <div class="price">${x.p}</div>
+                        <a href="https://wa.me/91YOUR_NUMBER?text=Order: ${x.n} (${x.p})" class="wa-card-btn">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </a>
+                    </div>
+                </div>`).join('');
+        }
+
+        function doSearch() {
+            let v = document.getElementById('s-input').value.toLowerCase();
+            render(items.filter(x => x.n.toLowerCase().includes(v)), 'search-results');
+        }
+
+        function trackOrder() {
+            const id = document.getElementById('track-id').value;
+            document.getElementById('track-res').innerText = id ? "Checking status for " + id + "..." : "Enter ID.";
+        }
+
+        function openM(i, t, p) {
+            document.getElementById('m-img').style.backgroundImage = `url('${i}')`;
+            document.getElementById('m-title').innerText = t;
+            document.getElementById('m-price').innerText = p;
+            document.getElementById('wa-link').href = `https://wa.me/91YOUR_NUMBER?text=Order Request: ${t} (${p})`;
+            document.getElementById('p-modal').style.display = 'flex';
+        }
+
+        function closeM() { document.getElementById('p-modal').style.display = 'none'; }
+        window.onload = getData;
+    </script>
 </body>
-</html>
+  </html>
+  
