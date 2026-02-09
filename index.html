@@ -9,7 +9,7 @@
     <style>
         :root { --gold: #b08d57; --black: #111; --gray: #f9f9f9; --white: #ffffff; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Poppins', sans-serif; background: var(--white); color: var(--black); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+        body { font-family: 'Poppins', sans-serif; background: var(--white); color: var(--black); -webkit-font-smoothing: antialiased; }
 
         /* WELCOME OVERLAY */
         #welcome-overlay {
@@ -20,12 +20,7 @@
         }
         .welcome-content { padding: 30px; max-width: 500px; }
         .welcome-content h1 { font-family: 'Playfair Display'; font-size: 32px; margin-bottom: 15px; letter-spacing: 2px; text-transform: uppercase; }
-        .welcome-content p { font-size: 14px; color: #666; margin-bottom: 25px; line-height: 1.6; }
-        .enter-btn { 
-            background: #000; color: #fff; padding: 15px 40px; border: none; 
-            font-weight: 700; text-transform: uppercase; cursor: pointer; 
-            letter-spacing: 2px; transition: 0.3s;
-        }
+        .enter-btn { background: #000; color: #fff; padding: 15px 40px; border: none; font-weight: 700; text-transform: uppercase; cursor: pointer; letter-spacing: 2px; }
 
         /* Navbar */
         nav { 
@@ -40,32 +35,27 @@
         .page.active { display: block; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-        /* Product Cards */
+        /* Product Grid */
         .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; padding: 20px 4%; }
         .card { background: #fff; border-radius: 8px; overflow: hidden; border: 1px solid #f2f2f2; display: flex; flex-direction: column; }
         .img-wrap { width: 100%; aspect-ratio: 3/4; cursor: pointer; }
         .img-wrap img { width: 100%; height: 100%; object-fit: cover; }
-        .info { padding: 15px; text-align: center; }
+        .info { padding: 15px; text-align: center; flex-grow: 1; }
         .title { font-size: 11px; font-weight: 400; color: #666; height: 32px; overflow: hidden; margin-bottom: 5px; }
         .price { font-size: 16px; font-weight: 700; color: var(--gold); margin-bottom: 12px; }
-        .wa-btn { 
-            background: #000; color: #fff; text-decoration: none; text-align: center;
-            font-size: 10px; font-weight: 700; padding: 12px; border-radius: 4px; 
-            text-transform: uppercase; display: block; letter-spacing: 1px;
-        }
+        .wa-btn { background: #000; color: #fff; text-decoration: none; text-align: center; font-size: 10px; font-weight: 700; padding: 12px; border-radius: 4px; text-transform: uppercase; display: block; }
 
-        /* Content Sections */
-        .content-wrap { padding: 40px 8%; }
-        .policy-list { list-style: none; }
-        .policy-list li { padding: 18px 0; border-bottom: 1px solid #f2f2f2; font-size: 14px; color: #444; cursor: pointer; }
+        /* Content Wrappers for FAQ, Payment, etc. */
+        .content-wrap { padding: 40px 8%; line-height: 1.8; }
+        .content-wrap h1 { font-family: 'Playfair Display'; font-size: 26px; margin-bottom: 25px; border-bottom: 2px solid var(--gold); display: inline-block; }
+        .content-wrap h3 { font-size: 15px; margin-top: 20px; color: var(--gold); text-transform: uppercase; }
+        .content-wrap p, .content-wrap li { font-size: 13px; color: #555; margin-bottom: 10px; list-style: none; }
+        .back-home { margin-top: 30px; display: inline-block; padding: 10px 20px; background: #000; color: #fff; text-decoration: none; font-size: 11px; cursor: pointer; }
 
         /* Footer */
         .full-footer { padding: 50px 8%; background: #fff; border-top: 1px solid #eee; margin-top: 50px; }
         .footer-grid { display: grid; grid-template-columns: 1fr; gap: 30px; }
-        @media (min-width: 768px) { 
-            .grid { grid-template-columns: repeat(4, 1fr); } 
-            .footer-grid { grid-template-columns: repeat(3, 1fr); }
-        }
+        @media (min-width: 768px) { .grid { grid-template-columns: repeat(4, 1fr); } .footer-grid { grid-template-columns: repeat(3, 1fr); } }
 
         /* Modal */
         .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 5000; align-items: center; justify-content: center; padding: 20px; }
@@ -80,7 +70,7 @@
         <div class="welcome-content">
             <p style="letter-spacing: 3px; font-size: 10px; color: var(--gold);">EST. 2026</p>
             <h1>THE CLOTHS URBAN</h1>
-            <p>Elegance in every stitch. Discover our premium urban collection curated for the modern lifestyle.</p>
+            <p>Premium Urban Collection. Minimalist Aesthetics.</p>
             <button class="enter-btn" onclick="closeWelcome()">Explore Collection</button>
         </div>
     </div>
@@ -97,36 +87,78 @@
         <div class="grid" id="main-grid"></div>
     </div>
 
-    <div id="menu-page" class="page">
+    <div id="why-page" class="page">
         <div class="content-wrap">
-            <ul class="policy-list">
-                <li onclick="showPage('track-page')">Track Order</li>
-                <li onclick="showPage('faq-page')">FAQs</li>
-                <li onclick="showPage('home-page')">Shipping Policy</li>
-                <li onclick="showPage('home-page')" style="font-weight:700;">← Back</li>
-            </ul>
+            <h1>Why theclothsurban?</h1>
+            <h3>1. Premium Quality</h3>
+            <p>Hum sirf premium fabric aur modern cuts use karte hain jo long-lasting hote hain.</p>
+            <h3>2. Urban Vibe</h3>
+            <p>Har design aaj ke street style ko dhyan mein rakh kar banaya gaya hai.</p>
+            <a onclick="showPage('home-page')" class="back-home">BACK TO SHOP</a>
+        </div>
+    </div>
+
+    <div id="faq-page" class="page">
+        <div class="content-wrap">
+            <h1>FAQs</h1>
+            <h3>How to Order?</h3>
+            <p>Product select karein aur "Order on WhatsApp" button dabayein.</p>
+            <h3>Exchange Policy?</h3>
+            <p>48 hours ke exchange policy available hai agar size issue ho.</p>
+            <a onclick="showPage('home-page')" class="back-home">BACK TO SHOP</a>
+        </div>
+    </div>
+
+    <div id="payment-page" class="page">
+        <div class="content-wrap">
+            <h1>Payment Details</h1>
+            <p>Hum ye modes accept karte hain:</p>
+            <li>• UPI (GPay, PhonePe, Paytm)</li>
+            <li>• Net Banking & All Cards</li>
+            <li>• Cash on Delivery (₹100 Extra Fee)</li>
+            <a onclick="showPage('home-page')" class="back-home">BACK TO SHOP</a>
         </div>
     </div>
 
     <div id="track-page" class="page">
         <div class="content-wrap" style="text-align:center">
             <h1>Track Order</h1>
-            <input type="text" placeholder="Enter Order ID" style="width:100%; padding:12px; margin-bottom:10px; border:1px solid #ddd;">
-            <button onclick="alert('Tracking info sent to your WhatsApp!')" class="enter-btn" style="width:100%">Track</button>
+            <input type="text" id="t-id" placeholder="Enter Order ID" style="width:100%; padding:15px; border:1px solid #ddd; border-radius:4px; max-width:400px; margin-bottom:15px;">
+            <br>
+            <button onclick="document.getElementById('t-res').innerText='Status: Processing...'" class="enter-btn">Check</button>
+            <p id="t-res" style="margin-top:20px; font-size:12px; color:#666;"></p>
+        </div>
+    </div>
+
+    <div id="menu-page" class="page">
+        <div class="content-wrap">
+            <h2 style="font-family:'Playfair Display'; margin-bottom:20px;">Quick Access</h2>
+            <div style="display:flex; flex-direction:column; gap:20px;">
+                <p onclick="showPage('why-page')" style="cursor:pointer; border-bottom:1px solid #eee; padding-bottom:10px;">Why Choose Us?</p>
+                <p onclick="showPage('faq-page')" style="cursor:pointer; border-bottom:1px solid #eee; padding-bottom:10px;">FAQs</p>
+                <p onclick="showPage('payment-page')" style="cursor:pointer; border-bottom:1px solid #eee; padding-bottom:10px;">Payment Details</p>
+                <p onclick="showPage('track-page')" style="cursor:pointer; border-bottom:1px solid #eee; padding-bottom:10px;">Track Order</p>
+                <p onclick="showPage('home-page')" style="font-weight:700; cursor:pointer;">← Back to Shop</p>
+            </div>
         </div>
     </div>
 
     <div id="search-page" class="page">
         <div class="content-wrap">
-            <input type="text" id="s-input" onkeyup="doSearch()" placeholder="Search..." style="width:100%; padding:15px; font-size:22px; border:none; border-bottom:2px solid #000; outline:none;">
+            <input type="text" id="s-input" onkeyup="doSearch()" placeholder="Search collection..." style="width:100%; padding:15px; font-size:22px; border:none; border-bottom:2px solid #000; outline:none;">
             <div class="grid" id="search-results"></div>
         </div>
     </div>
 
     <div class="full-footer">
         <div class="footer-grid">
-            <div><h3 style="font-size:12px; margin-bottom:10px;">THE CLOTHS URBAN</h3><p style="font-size:11px; color:#666;">Modern. Minimal. Premium.</p></div>
-            <div><h3 style="font-size:12px; margin-bottom:10px;">INSTAGRAM</h3><a href="https://instagram.com/theclothsurban" target="_blank" style="color:#000; font-size:20px;"><i class="fab fa-instagram"></i></a></div>
+            <div><h3 style="font-size:12px; margin-bottom:10px;">THE CLOTHS URBAN</h3><p style="font-size:11px; color:#666;">Minimal. Premium. Urban.</p></div>
+            <div><h3 style="font-size:12px; margin-bottom:10px;">QUICK LINKS</h3>
+                <p onclick="showPage('why-page')" style="font-size:11px; cursor:pointer; margin-bottom:5px;">Trust/Why Us?</p>
+                <p onclick="showPage('faq-page')" style="font-size:11px; cursor:pointer; margin-bottom:5px;">Support/FAQs</p>
+                <p onclick="showPage('payment-page')" style="font-size:11px; cursor:pointer;">Payments</p>
+            </div>
+            <div><h3 style="font-size:12px; margin-bottom:10px;">SOCIAL</h3><a href="https://instagram.com/theclothsurban" target="_blank" style="color:#000; font-size:20px;"><i class="fab fa-instagram"></i></a></div>
         </div>
         <p style="text-align:center; margin-top:40px; font-size:9px; color:#aaa;">© 2026 THE CLOTHS URBAN</p>
     </div>
@@ -135,32 +167,29 @@
         <div class="modal-inner">
             <div id="m-img" class="modal-img"></div>
             <div class="modal-data">
-                <h2 id="m-title" style="font-family:'Playfair Display'; margin-bottom:5px;"></h2>
-                <span id="m-price" style="color:var(--gold); font-weight:700; display:block; margin-bottom:15px;"></span>
-                <a href="#" id="wa-link" class="wa-btn" style="padding:15px; display:block; text-decoration:none;">Order on WhatsApp</a>
+                <h2 id="m-title" style="font-family:'Playfair Display';"></h2>
+                <span id="m-price" style="color:var(--gold); font-weight:700; display:block; margin:10px 0;"></span>
+                <a href="#" id="wa-link" class="wa-btn">Order on WhatsApp</a>
                 <p onclick="closeM()" style="margin-top:15px; font-size:11px; text-decoration:underline; cursor:pointer">Close</p>
             </div>
         </div>
     </div>
 
     <script>
-        // Welcome message function
         function closeWelcome() {
             document.getElementById('welcome-overlay').style.opacity = '0';
-            setTimeout(() => {
-                document.getElementById('welcome-overlay').style.display = 'none';
-            }, 500);
+            setTimeout(() => { document.getElementById('welcome-overlay').style.display = 'none'; }, 500);
         }
-
-        let items = [];
-        const S_ID = '1oLLc5XZQHpR6f1iW8YKTQ6LG6fOtf1S8ZFXWT3Nm4Bg';
-        const URL = `https://docs.google.com/spreadsheets/d/${S_ID}/gviz/tq?tqx=out:json`;
 
         function showPage(id) {
             document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
             document.getElementById(id).classList.add('active');
             window.scrollTo(0,0);
         }
+
+        let items = [];
+        const S_ID = '1oLLc5XZQHpR6f1iW8YKTQ6LG6fOtf1S8ZFXWT3Nm4Bg';
+        const URL = `https://docs.google.com/spreadsheets/d/${S_ID}/gviz/tq?tqx=out:json`;
 
         async function getData() {
             try {
@@ -174,19 +203,16 @@
                     c: row.c[3] ? row.c[3].v.trim() : 'New'
                 })).filter(x => x.i !== '');
                 render(items, 'main-grid');
-            } catch (e) { console.log("Error loading products"); }
+            } catch (e) { console.log("Load Error"); }
         }
 
         function render(arr, target) {
             document.getElementById(target).innerHTML = arr.map(x => `
                 <div class="card">
-                    <div class="img-wrap" onclick="openM('${x.i}','${x.n}','${x.p}')">
-                        <img src="${x.i}">
-                    </div>
+                    <div class="img-wrap" onclick="openM('${x.i}','${x.n}','${x.p}')"><img src="${x.i}"></div>
                     <div class="info">
-                        <div class="title">${x.n}</div>
-                        <div class="price">${x.p}</div>
-                        <a href="https://wa.me/91YOUR_NUMBER?text=Order Request: ${x.n} (${x.p})" class="wa-btn">Order Now</a>
+                        <div class="title">${x.n}</div><div class="price">${x.p}</div>
+                        <a href="https://wa.me/91YOUR_NUMBER?text=Order: ${x.n}" class="wa-btn">Order Now</a>
                     </div>
                 </div>`).join('');
         }
@@ -209,3 +235,4 @@
     </script>
 </body>
 </html>
+
