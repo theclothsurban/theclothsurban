@@ -9,7 +9,23 @@
     <style>
         :root { --gold: #b08d57; --black: #111; --gray: #f9f9f9; --white: #ffffff; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Poppins', sans-serif; background: var(--white); color: var(--black); -webkit-font-smoothing: antialiased; }
+        body { font-family: 'Poppins', sans-serif; background: var(--white); color: var(--black); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+
+        /* WELCOME OVERLAY */
+        #welcome-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            z-index: 9999; display: flex; align-items: center; justify-content: center;
+            text-align: center; transition: 0.5s ease;
+        }
+        .welcome-content { padding: 30px; max-width: 500px; }
+        .welcome-content h1 { font-family: 'Playfair Display'; font-size: 32px; margin-bottom: 15px; letter-spacing: 2px; text-transform: uppercase; }
+        .welcome-content p { font-size: 14px; color: #666; margin-bottom: 25px; line-height: 1.6; }
+        .enter-btn { 
+            background: #000; color: #fff; padding: 15px 40px; border: none; 
+            font-weight: 700; text-transform: uppercase; cursor: pointer; 
+            letter-spacing: 2px; transition: 0.3s;
+        }
 
         /* Navbar */
         nav { 
@@ -38,22 +54,14 @@
             text-transform: uppercase; display: block; letter-spacing: 1px;
         }
 
-        /* Sidebar/Menu List Style */
+        /* Content Sections */
         .content-wrap { padding: 40px 8%; }
-        .content-wrap h1 { font-family: 'Playfair Display'; font-size: 24px; margin-bottom: 25px; border-bottom: 2px solid #eee; padding-bottom: 10px; }
         .policy-list { list-style: none; }
         .policy-list li { padding: 18px 0; border-bottom: 1px solid #f2f2f2; font-size: 14px; color: #444; cursor: pointer; }
-        .policy-list li:hover { color: var(--gold); }
-
-        /* Track Page Specific */
-        .track-box { max-width: 400px; margin: 20px auto; background: var(--gray); padding: 25px; border-radius: 8px; text-align: center; }
-        .n-input { width: 100%; padding: 12px; border: 1px solid #ddd; margin-bottom: 10px; outline: none; border-radius: 4px; }
-        .sub-btn { background: #000; color: #fff; width: 100%; padding: 12px; border: none; font-weight: 700; text-transform: uppercase; cursor: pointer; border-radius: 4px; }
 
         /* Footer */
         .full-footer { padding: 50px 8%; background: #fff; border-top: 1px solid #eee; margin-top: 50px; }
         .footer-grid { display: grid; grid-template-columns: 1fr; gap: 30px; }
-
         @media (min-width: 768px) { 
             .grid { grid-template-columns: repeat(4, 1fr); } 
             .footer-grid { grid-template-columns: repeat(3, 1fr); }
@@ -67,6 +75,15 @@
     </style>
 </head>
 <body>
+
+    <div id="welcome-overlay">
+        <div class="welcome-content">
+            <p style="letter-spacing: 3px; font-size: 10px; color: var(--gold);">EST. 2026</p>
+            <h1>THE CLOTHS URBAN</h1>
+            <p>Elegance in every stitch. Discover our premium urban collection curated for the modern lifestyle.</p>
+            <button class="enter-btn" onclick="closeWelcome()">Explore Collection</button>
+        </div>
+    </div>
 
     <nav>
         <div class="logo-text" onclick="showPage('home-page')">THE CLOTHS URBAN</div>
@@ -82,14 +99,11 @@
 
     <div id="menu-page" class="page">
         <div class="content-wrap">
-            <h1>Quick Links</h1>
             <ul class="policy-list">
-                <li onclick="showPage('track-page')">Track Your Order</li>
-                <li onclick="showPage('shipping-page')">Shipping Policy</li>
+                <li onclick="showPage('track-page')">Track Order</li>
                 <li onclick="showPage('faq-page')">FAQs</li>
-                <li onclick="showPage('payment-page')">Payment Details</li>
-                <li onclick="showPage('why-page')">Why Choose Us?</li>
-                <li onclick="showPage('home-page')" style="font-weight:700;">← Back to Shop</li>
+                <li onclick="showPage('home-page')">Shipping Policy</li>
+                <li onclick="showPage('home-page')" style="font-weight:700;">← Back</li>
             </ul>
         </div>
     </div>
@@ -97,53 +111,22 @@
     <div id="track-page" class="page">
         <div class="content-wrap" style="text-align:center">
             <h1>Track Order</h1>
-            <div class="track-box">
-                <input type="text" id="t-id" placeholder="Enter Order ID" class="n-input">
-                <button onclick="document.getElementById('t-res').innerText='Order is in process...'" class="sub-btn">Track</button>
-                <p id="t-res" style="margin-top:15px; font-size:12px; color:#666;"></p>
-            </div>
-        </div>
-    </div>
-
-    <div id="shipping-page" class="page">
-        <div class="content-wrap">
-            <h1>Shipping Policy</h1>
-            <p>• Dispatch within 24-48 hours.<br>• Free shipping on prepaid orders.<br>• Delivery in 3-7 business days.</p>
-            <button onclick="showPage('home-page')" class="sub-btn" style="margin-top:20px; width:auto; padding:10px 30px;">Back</button>
-        </div>
-    </div>
-
-    <div id="faq-page" class="page">
-        <div class="content-wrap">
-            <h1>FAQs</h1>
-            <p><b>Q: Do you offer COD?</b><br>A: Yes, COD is available with ₹100 extra charge.</p>
-            <p><b>Q: How do I contact support?</b><br>A: You can reach us on WhatsApp for any help.</p>
-            <button onclick="showPage('home-page')" class="sub-btn" style="margin-top:20px; width:auto; padding:10px 30px;">Back</button>
+            <input type="text" placeholder="Enter Order ID" style="width:100%; padding:12px; margin-bottom:10px; border:1px solid #ddd;">
+            <button onclick="alert('Tracking info sent to your WhatsApp!')" class="enter-btn" style="width:100%">Track</button>
         </div>
     </div>
 
     <div id="search-page" class="page">
         <div class="content-wrap">
-            <input type="text" id="s-input" onkeyup="doSearch()" placeholder="Search collection..." class="n-input" style="font-size:22px; border:none; border-bottom:2px solid #000; border-radius:0;">
+            <input type="text" id="s-input" onkeyup="doSearch()" placeholder="Search..." style="width:100%; padding:15px; font-size:22px; border:none; border-bottom:2px solid #000; outline:none;">
             <div class="grid" id="search-results"></div>
         </div>
     </div>
 
     <div class="full-footer">
         <div class="footer-grid">
-            <div>
-                <h3 style="font-size:12px; margin-bottom:15px;">THE CLOTHS URBAN</h3>
-                <p style="font-size:11px; color:#666;">Urban aesthetics for the modern soul. Premium streetwear brand born in 2026.</p>
-            </div>
-            <div>
-                <h3 style="font-size:12px; margin-bottom:15px;">HELP</h3>
-                <p onclick="showPage('track-page')" style="font-size:11px; cursor:pointer; margin-bottom:5px;">Track Order</p>
-                <p onclick="showPage('faq-page')" style="font-size:11px; cursor:pointer;">Support</p>
-            </div>
-            <div>
-                <h3 style="font-size:12px; margin-bottom:15px;">INSTAGRAM</h3>
-                <a href="https://instagram.com/theclothsurban" target="_blank" style="color:#000; font-size:20px;"><i class="fab fa-instagram"></i></a>
-            </div>
+            <div><h3 style="font-size:12px; margin-bottom:10px;">THE CLOTHS URBAN</h3><p style="font-size:11px; color:#666;">Modern. Minimal. Premium.</p></div>
+            <div><h3 style="font-size:12px; margin-bottom:10px;">INSTAGRAM</h3><a href="https://instagram.com/theclothsurban" target="_blank" style="color:#000; font-size:20px;"><i class="fab fa-instagram"></i></a></div>
         </div>
         <p style="text-align:center; margin-top:40px; font-size:9px; color:#aaa;">© 2026 THE CLOTHS URBAN</p>
     </div>
@@ -154,13 +137,21 @@
             <div class="modal-data">
                 <h2 id="m-title" style="font-family:'Playfair Display'; margin-bottom:5px;"></h2>
                 <span id="m-price" style="color:var(--gold); font-weight:700; display:block; margin-bottom:15px;"></span>
-                <a href="#" id="wa-link" class="wa-btn" style="padding:15px;">Order on WhatsApp</a>
+                <a href="#" id="wa-link" class="wa-btn" style="padding:15px; display:block; text-decoration:none;">Order on WhatsApp</a>
                 <p onclick="closeM()" style="margin-top:15px; font-size:11px; text-decoration:underline; cursor:pointer">Close</p>
             </div>
         </div>
     </div>
 
     <script>
+        // Welcome message function
+        function closeWelcome() {
+            document.getElementById('welcome-overlay').style.opacity = '0';
+            setTimeout(() => {
+                document.getElementById('welcome-overlay').style.display = 'none';
+            }, 500);
+        }
+
         let items = [];
         const S_ID = '1oLLc5XZQHpR6f1iW8YKTQ6LG6fOtf1S8ZFXWT3Nm4Bg';
         const URL = `https://docs.google.com/spreadsheets/d/${S_ID}/gviz/tq?tqx=out:json`;
@@ -183,7 +174,7 @@
                     c: row.c[3] ? row.c[3].v.trim() : 'New'
                 })).filter(x => x.i !== '');
                 render(items, 'main-grid');
-            } catch (e) { console.log("Load Error"); }
+            } catch (e) { console.log("Error loading products"); }
         }
 
         function render(arr, target) {
@@ -195,9 +186,7 @@
                     <div class="info">
                         <div class="title">${x.n}</div>
                         <div class="price">${x.p}</div>
-                        <a href="https://wa.me/91YOUR_NUMBER?text=I want to order: ${x.n} (${x.p})" class="wa-btn">
-                            Order on WhatsApp
-                        </a>
+                        <a href="https://wa.me/91YOUR_NUMBER?text=Order Request: ${x.n} (${x.p})" class="wa-btn">Order Now</a>
                     </div>
                 </div>`).join('');
         }
@@ -211,7 +200,7 @@
             document.getElementById('m-img').style.backgroundImage = `url('${i}')`;
             document.getElementById('m-title').innerText = t;
             document.getElementById('m-price').innerText = p;
-            document.getElementById('wa-link').href = `https://wa.me/91YOUR_NUMBER?text=Order Request: ${t} (${p})`;
+            document.getElementById('wa-link').href = `https://wa.me/91YOUR_NUMBER?text=Order: ${t} (${p})`;
             document.getElementById('p-modal').style.display = 'flex';
         }
 
