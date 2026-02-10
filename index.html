@@ -3,75 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>theclothsurban | Luxury Streetwear</title>
+    <title>theclothsurban | Premium Store</title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --gold: #c5a059; --black: #0a0a0a; --white: #ffffff; --gray: #f2f2f2; }
-        
-        /* Reset & Mobile Optimization */
+        :root { --gold: #c5a059; --black: #0a0a0a; --white: #ffffff; --gray: #f2f2f2; --red: #e74c3c; }
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; outline: none !important; }
-        html, body { overflow-x: hidden; width: 100%; position: relative; }
-        body { font-family: 'Montserrat', sans-serif; background: var(--white); color: var(--black); }
+        body { font-family: 'Montserrat', sans-serif; background: #fff; color: var(--black); overflow-x: hidden; }
 
-        /* Navbar Layout */
-        nav { 
-            display: flex; justify-content: space-between; align-items: center; 
-            padding: 0 15px; height: 65px; background: #fff; position: sticky; top: 0; z-index: 1000;
-            border-bottom: 1px solid #eee;
-        }
-        .logo { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; flex: 1; cursor: pointer; }
-        .nav-icons { display: flex; gap: 20px; font-size: 17px; align-items: center; }
+        /* COMING SOON BANNER */
+        .promo-banner { background: var(--black); color: #fff; font-size: 10px; padding: 8px; text-align: center; letter-spacing: 2px; text-transform: uppercase; }
+        .promo-banner span { color: var(--gold); font-weight: 600; }
 
-        /* Welcome Overlay */
-        #welcome-overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: var(--white); z-index: 9999; display: flex; 
-            align-items: center; justify-content: center; text-align: center;
-            transition: 0.5s ease;
-        }
+        /* Navbar */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 0 15px; height: 60px; background: #fff; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #eee; }
+        .logo { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; flex: 1; }
+        .nav-icons { display: flex; gap: 18px; font-size: 16px; align-items: center; }
 
-        /* Tabs (Collections) */
-        .tabs-container { overflow-x: auto; white-space: nowrap; padding: 12px 15px; border-bottom: 1px solid #f9f9f9; scrollbar-width: none; background: #fff; }
-        .tabs-container::-webkit-scrollbar { display: none; }
-        .tab { display: inline-block; font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; margin-right: 20px; color: #aaa; cursor: pointer; padding-bottom: 5px; transition: 0.3s; }
+        /* Tabs */
+        .tabs-container { overflow-x: auto; white-space: nowrap; padding: 12px 15px; border-bottom: 1px solid #f9f9f9; scrollbar-width: none; }
+        .tab { display: inline-block; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; margin-right: 20px; color: #aaa; cursor: pointer; padding-bottom: 5px; }
         .tab.active { color: #000; border-bottom: 2px solid #000; font-weight: 600; }
 
-        /* Grid & Card Fix */
-        .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; padding: 10px; width: 100%; }
-        .card { background: #fff; margin-bottom: 5px; animation: fadeIn 0.5s ease; }
-        .img-wrap { width: 100%; aspect-ratio: 3/4; overflow: hidden; background: var(--gray); border-radius: 4px; }
+        /* Grid & Meesho Style Card */
+        .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; padding: 12px; }
+        .card { background: #fff; border: 1px solid #f0f0f0; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; }
+        .img-wrap { width: 100%; aspect-ratio: 3/4; overflow: hidden; background: var(--gray); }
         .img-wrap img { width: 100%; height: 100%; object-fit: cover; }
-        .info { padding: 8px 0; text-align: left; }
-        .title { font-size: 11px; margin-bottom: 4px; text-transform: uppercase; line-height: 1.2; height: 2.4em; overflow: hidden; color: #333; }
-        .price { font-weight: 600; color: var(--gold); font-size: 13px; }
-        .add-btn { width: 100%; padding: 12px; background: #000; color: #fff; border: none; font-size: 9px; text-transform: uppercase; letter-spacing: 1px; margin-top: 8px; border-radius: 2px; cursor: pointer; }
-
-        /* Sidebar (Cart) */
-        #cart-sidebar {
-            position: fixed; top: 0; right: -100%; width: 85%; max-width: 320px; height: 100%;
-            background: white; z-index: 2000; transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1); padding: 25px; box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-        }
-        #cart-sidebar.active { right: 0; }
-
-        /* Pages & Content */
-        .page { display: none; padding: 20px 15px; min-height: 70vh; }
-        .page.active { display: block; }
-        .section-title { font-family: 'Cormorant Garamond'; font-size: 28px; margin-bottom: 20px; }
         
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        @media (min-width: 768px) { .grid { grid-template-columns: repeat(4, 1fr); gap: 20px; padding: 20px 5%; } }
+        .info { padding: 10px; text-align: left; }
+        .title { font-size: 11px; margin-bottom: 4px; text-transform: capitalize; color: #444; height: 1.3em; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+        .price { font-weight: 700; color: #000; font-size: 14px; margin-bottom: 8px; }
+
+        /* Size Selector */
+        .size-box { display: flex; gap: 5px; margin-bottom: 10px; }
+        .size-btn { border: 1px solid #ddd; background: #fff; font-size: 9px; padding: 4px 6px; border-radius: 3px; cursor: pointer; }
+        .size-btn.selected { background: #000; color: #fff; border-color: #000; }
+
+        /* Action Buttons */
+        .btn-row { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; }
+        .btn { padding: 10px 5px; font-size: 9px; font-weight: 600; text-transform: uppercase; cursor: pointer; border-radius: 4px; border: none; text-align: center; }
+        .btn-bag { background: #fff; border: 1px solid #000; color: #000; }
+        .btn-buy { background: var(--black); color: #fff; }
+
+        /* Cart Sidebar */
+        #cart-sidebar { position: fixed; top: 0; right: -100%; width: 85%; max-width: 320px; height: 100%; background: white; z-index: 2000; transition: 0.3s ease; padding: 20px; box-shadow: -5px 0 15px rgba(0,0,0,0.1); }
+        #cart-sidebar.active { right: 0; }
+        .cart-item { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid #eee; font-size: 12px; }
+        .remove-btn { color: var(--red); font-size: 14px; cursor: pointer; padding: 5px; }
+
+        .page { display: none; padding-top: 10px; }
+        .page.active { display: block; }
     </style>
 </head>
 <body>
 
-    <div id="welcome-overlay" onclick="this.style.opacity='0'; setTimeout(()=>this.style.display='none', 500)">
-        <div>
-            <h1 style="font-family: 'Cormorant Garamond'; font-size: 35px; letter-spacing: 3px;">theclothsurban</h1>
-            <p style="letter-spacing: 4px; font-size: 10px; margin-bottom: 30px; color: #888;">LUXURY STREETWEAR</p>
-            <button style="background: #000; color: #fff; border: none; padding: 12px 40px; cursor: pointer; font-size: 10px; letter-spacing: 2px;">ENTER SHOP</button>
-        </div>
-    </div>
+    <div class="promo-banner"><span>COMING SOON:</span> URBAN OVERSIZED COLLECTION 2026</div>
 
     <nav>
         <div class="logo" onclick="showPage('home-page')">theclothsurban</div>
@@ -79,7 +66,7 @@
             <i class="fas fa-search" onclick="showPage('search-page')"></i>
             <div onclick="toggleCart()" style="position: relative; cursor: pointer;">
                 <i class="fas fa-shopping-bag"></i>
-                <span id="cart-count" style="position: absolute; top:-8px; right:-8px; background:black; color:white; font-size:9px; border-radius:50%; padding:1px 5px;">0</span>
+                <span id="cart-count" style="position: absolute; top:-8px; right:-8px; background:var(--red); color:white; font-size:9px; border-radius:50%; padding:1px 5px;">0</span>
             </div>
             <i class="fas fa-bars" onclick="showPage('menu-page')"></i>
         </div>
@@ -89,42 +76,20 @@
         <div class="tab active" onclick="filterItems('All', this)">All</div>
         <div class="tab" onclick="filterItems('New', this)">New Arrivals</div>
         <div class="tab" onclick="filterItems('Essentials', this)">Essentials</div>
-        <div class="tab" onclick="filterItems('Sale', this)">Sale</div>
     </div>
 
-    <div id="home-page" class="page active">
-        <div class="grid" id="main-grid"></div>
-    </div>
-
-    <div id="search-page" class="page">
-        <input type="text" id="s-input" onkeyup="searchItems()" placeholder="Search collection..." style="width:100%; padding:12px; border:none; border-bottom:1px solid #000; font-size:16px; margin-bottom:20px; font-family: 'Montserrat';">
-        <div class="grid" id="search-grid"></div>
-    </div>
-
-    <div id="menu-page" class="page">
-        <h2 class="section-title">Information</h2>
-        <div style="display:flex; flex-direction:column; gap:25px; font-size:12px; text-transform:uppercase; letter-spacing:1.5px;">
-            <p onclick="showPage('why-page')">Why theclothsurban?</p>
-            <p onclick="showPage('faq-page')">Support & FAQs</p>
-            <p onclick="showPage('pay-page')">Payment Methods</p>
-            <p onclick="showPage('contact-page')">Contact Us</p>
-            <p onclick="showPage('home-page')" style="color:var(--gold); font-weight:600;">← Back to Shopping</p>
-        </div>
-    </div>
-
-    <div id="why-page" class="page"><h2 class="section-title">Why Us?</h2><p>Premium fabric. Urban aesthetic. Exclusive drops.</p><button onclick="showPage('home-page')" class="add-btn" style="width:auto; padding:10px 25px; margin-top:20px;">Back</button></div>
-    <div id="faq-page" class="page"><h2 class="section-title">FAQs</h2><p>Shipping: 3-7 days. Exchange: 48 hours.</p><button onclick="showPage('home-page')" class="add-btn" style="width:auto; padding:10px 25px; margin-top:20px;">Back</button></div>
-    <div id="pay-page" class="page"><h2 class="section-title">Payments</h2><p>UPI, Cards, and COD (₹100 extra fee) accepted.</p><button onclick="showPage('home-page')" class="add-btn" style="width:auto; padding:10px 25px; margin-top:20px;">Back</button></div>
-    <div id="contact-page" class="page"><h2 class="section-title">Contact Us</h2><p>WhatsApp: +91 YOUR_NUMBER<br>Email: support@theclothsurban.in</p><button onclick="showPage('home-page')" class="add-btn" style="width:auto; padding:10px 25px; margin-top:20px;">Back</button></div>
+    <div id="home-page" class="page active"><div class="grid" id="main-grid"></div></div>
+    <div id="search-page" class="page" style="padding:15px;"><input type="text" id="s-input" onkeyup="searchItems()" placeholder="Search items..." style="width:100%; padding:12px; border:1px solid #ddd; border-radius:5px;"><div class="grid" id="search-grid"></div></div>
+    <div id="menu-page" class="page" style="padding:30px;"><h2>Menu</h2><p onclick="showPage('home-page')" style="margin-top:20px;">Back to Shop</p></div>
 
     <div id="cart-sidebar">
-        <div style="display:flex; justify-content:space-between; margin-bottom:30px; border-bottom:1px solid #eee; padding-bottom:10px;">
-            <span style="font-weight:600; letter-spacing:1px;">SHOPPING BAG</span>
-            <i class="fas fa-times" onclick="toggleCart()" style="cursor:pointer;"></i>
+        <div style="display:flex; justify-content:space-between; margin-bottom:20px;">
+            <span style="font-weight:600;">MY BAG</span>
+            <i class="fas fa-times" onclick="toggleCart()"></i>
         </div>
-        <div id="cart-content" style="font-size:13px; color:#888;">Your bag is currently empty.</div>
-        <div id="cart-foot" style="position:absolute; bottom:25px; width:85%; display:none;">
-            <button onclick="checkout()" class="add-btn" style="padding:15px; font-weight:600;">CHECKOUT ON WHATSAPP</button>
+        <div id="cart-content">Bag is empty.</div>
+        <div id="cart-foot" style="position:absolute; bottom:20px; width:88%; display:none;">
+            <button onclick="checkout()" style="width:100%; background:#000; color:#fff; padding:15px; border:none; border-radius:5px; font-weight:600;">ORDER VIA WHATSAPP</button>
         </div>
     </div>
 
@@ -136,7 +101,6 @@
             document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
             document.getElementById(id).classList.add('active');
             document.getElementById('col-nav').style.display = (id === 'home-page') ? 'block' : 'none';
-            window.scrollTo(0,0);
         }
 
         function toggleCart() { document.getElementById('cart-sidebar').classList.toggle('active'); }
@@ -148,28 +112,84 @@
                 const r = await fetch(URL);
                 const t = await r.text();
                 const j = JSON.parse(t.substr(47).slice(0, -2));
-                allItems = j.table.rows.map(row => ({
+                allItems = j.table.rows.map((row, index) => ({
+                    id: index,
                     name: row.c[0] ? row.c[0].v : 'Urban Piece',
                     price: row.c[1] ? row.c[1].v : '',
                     img: row.c[2] ? row.c[2].v.trim() : '',
                     cat: (row.c[3] && row.c[3].v) ? row.c[3].v.trim() : 'New'
-                })).filter(x => x.img.includes('http')); // Sirf link wali items load karega
+                })).filter(x => x.img.includes('http'));
                 render(allItems, 'main-grid');
             } catch (e) { console.error("Data error"); }
         }
 
         function render(list, target) {
-            const container = document.getElementById(target);
-            if(list.length === 0) { container.innerHTML = "<p style='padding:20px; color:#999;'>No products found.</p>"; return; }
-            container.innerHTML = list.map(x => `
+            document.getElementById(target).innerHTML = list.map(x => `
                 <div class="card">
                     <div class="img-wrap"><img src="${x.img}"></div>
                     <div class="info">
                         <div class="title">${x.name}</div>
                         <div class="price">${x.price}</div>
-                        <button class="add-btn" onclick="addToCart('${x.name}', '${x.price}')">Add to Bag</button>
+                        <div class="size-box" id="size-for-${x.id}">
+                            <button class="size-btn" onclick="selectSize(${x.id}, 'M', this)">M</button>
+                            <button class="size-btn" onclick="selectSize(${x.id}, 'L', this)">L</button>
+                            <button class="size-btn" onclick="selectSize(${x.id}, 'XL', this)">XL</button>
+                            <button class="size-btn" onclick="selectSize(${x.id}, 'XXL', this)">XXL</button>
+                        </div>
+                        <div class="btn-row">
+                            <button class="btn btn-bag" onclick="addToCart(${x.id})">Add</button>
+                            <button class="btn btn-buy" onclick="buyNow(${x.id})">Buy Now</button>
+                        </div>
                     </div>
                 </div>`).join('');
+        }
+
+        let selectedSizes = {};
+        function selectSize(id, size, el) {
+            const parent = document.getElementById(`size-for-${id}`);
+            parent.querySelectorAll('.size-btn').forEach(b => b.classList.remove('selected'));
+            el.classList.add('selected');
+            selectedSizes[id] = size;
+        }
+
+        function addToCart(id) {
+            const size = selectedSizes[id];
+            if(!size) { alert("Please select a size first!"); return; }
+            const item = allItems.find(p => p.id === id);
+            cart.push({...item, selectedSize: size, cartId: Date.now()});
+            updateCart();
+            toggleCart();
+        }
+
+        function buyNow(id) {
+            const size = selectedSizes[id];
+            if(!size) { alert("Please select a size!"); return; }
+            const item = allItems.find(p => p.id === id);
+            let msg = `Hello! I want to buy this NOW:\n- ${item.name}\n- Size: ${size}\n- Price: ${item.price}`;
+            window.open(`https://wa.me/91YOUR_NUMBER?text=${encodeURIComponent(msg)}`);
+        }
+
+        function removeFromCart(cartId) {
+            cart = cart.filter(item => item.cartId !== cartId);
+            updateCart();
+        }
+
+        function updateCart() {
+            document.getElementById('cart-count').innerText = cart.length;
+            const box = document.getElementById('cart-content');
+            const foot = document.getElementById('cart-foot');
+            if(cart.length === 0) { box.innerHTML = "Bag is empty."; foot.style.display="none"; return; }
+            foot.style.display="block";
+            box.innerHTML = cart.map(x => `
+                <div class="cart-item">
+                    <div><b>${x.name}</b><br><small>Size: ${x.selectedSize} | ${x.price}</small></div>
+                    <i class="fas fa-trash-alt remove-btn" onclick="removeFromCart(${x.cartId})"></i>
+                </div>`).join('');
+        }
+
+        function checkout() {
+            let msg = "Order List:\n" + cart.map(x => `- ${x.name} (Size: ${x.selectedSize}) - ${x.price}`).join('\n');
+            window.open(`https://wa.me/91YOUR_NUMBER?text=${encodeURIComponent(msg)}`);
         }
 
         function filterItems(cat, el) {
@@ -181,26 +201,6 @@
         function searchItems() {
             let val = document.getElementById('s-input').value.toLowerCase();
             render(allItems.filter(p => p.name.toLowerCase().includes(val)), 'search-grid');
-        }
-
-        function addToCart(n, p) {
-            cart.push({n, p});
-            document.getElementById('cart-count').innerText = cart.length;
-            updateCartUI();
-            toggleCart();
-        }
-
-        function updateCartUI() {
-            const box = document.getElementById('cart-content');
-            const foot = document.getElementById('cart-foot');
-            if(cart.length === 0) { box.innerHTML = "Your bag is currently empty."; foot.style.display="none"; return; }
-            foot.style.display="block";
-            box.innerHTML = cart.map(x => `<div style="display:flex; justify-content:space-between; margin-bottom:12px; border-bottom:1px solid #f2f2f2; padding-bottom:5px;"><span>${x.n}</span><b>${x.p}</b></div>`).join('');
-        }
-
-        function checkout() {
-            let msg = "Hello theclothsurban, I want to order:\n" + cart.map(x => `- ${x.n} (${x.p})`).join('\n');
-            window.open(`https://wa.me/91YOUR_NUMBER?text=${encodeURIComponent(msg)}`);
         }
 
         window.onload = loadData;
