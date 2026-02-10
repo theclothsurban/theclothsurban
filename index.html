@@ -2,237 +2,208 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>theclothsurban | Official Store</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>theclothsurban | Luxury Streetwear</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --gold: #b08d57; --black: #111; --gray: #f9f9f9; --white: #ffffff; }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Poppins', sans-serif; background: var(--white); color: var(--black); -webkit-font-smoothing: antialiased; }
+        :root { --gold: #c5a059; --black: #0a0a0a; --white: #ffffff; --gray: #f2f2f2; }
+        
+        /* Reset & Mobile Optimization */
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; outline: none !important; }
+        html, body { overflow-x: hidden; width: 100%; position: relative; }
+        body { font-family: 'Montserrat', sans-serif; background: var(--white); color: var(--black); }
 
-        /* WELCOME OVERLAY */
-        #welcome-overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(255, 255, 255, 0.98);
-            z-index: 9999; display: flex; align-items: center; justify-content: center;
-            text-align: center; transition: 0.5s ease;
-        }
-        .welcome-content { padding: 30px; max-width: 500px; }
-        .welcome-content h1 { font-family: 'Playfair Display'; font-size: 32px; margin-bottom: 15px; letter-spacing: 2px; text-transform: uppercase; }
-        .enter-btn { background: #000; color: #fff; padding: 15px 40px; border: none; font-weight: 700; text-transform: uppercase; cursor: pointer; letter-spacing: 2px; }
-
-        /* Navbar */
+        /* Navbar Layout */
         nav { 
             display: flex; justify-content: space-between; align-items: center; 
-            padding: 0 5%; height: 70px; background: #fff; position: sticky; top: 0; z-index: 1000;
+            padding: 0 15px; height: 65px; background: #fff; position: sticky; top: 0; z-index: 1000;
             border-bottom: 1px solid #eee;
         }
-        .logo-text { font-family: 'Playfair Display'; font-size: 18px; font-weight: 900; text-transform: uppercase; letter-spacing: 1.5px; cursor: pointer; }
+        .logo { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; flex: 1; cursor: pointer; }
+        .nav-icons { display: flex; gap: 20px; font-size: 17px; align-items: center; }
 
-        /* Page System */
-        .page { display: none; padding-bottom: 50px; min-height: 80vh; animation: fadeIn 0.4s ease; }
-        .page.active { display: block; }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        /* Welcome Overlay */
+        #welcome-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: var(--white); z-index: 9999; display: flex; 
+            align-items: center; justify-content: center; text-align: center;
+            transition: 0.5s ease;
+        }
 
-        /* Product Grid */
-        .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; padding: 20px 4%; }
-        .card { background: #fff; border-radius: 8px; overflow: hidden; border: 1px solid #f2f2f2; display: flex; flex-direction: column; }
-        .img-wrap { width: 100%; aspect-ratio: 3/4; cursor: pointer; }
+        /* Tabs (Collections) */
+        .tabs-container { overflow-x: auto; white-space: nowrap; padding: 12px 15px; border-bottom: 1px solid #f9f9f9; scrollbar-width: none; background: #fff; }
+        .tabs-container::-webkit-scrollbar { display: none; }
+        .tab { display: inline-block; font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; margin-right: 20px; color: #aaa; cursor: pointer; padding-bottom: 5px; transition: 0.3s; }
+        .tab.active { color: #000; border-bottom: 2px solid #000; font-weight: 600; }
+
+        /* Grid & Card Fix */
+        .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; padding: 10px; width: 100%; }
+        .card { background: #fff; margin-bottom: 5px; animation: fadeIn 0.5s ease; }
+        .img-wrap { width: 100%; aspect-ratio: 3/4; overflow: hidden; background: var(--gray); border-radius: 4px; }
         .img-wrap img { width: 100%; height: 100%; object-fit: cover; }
-        .info { padding: 15px; text-align: center; flex-grow: 1; }
-        .title { font-size: 11px; font-weight: 400; color: #666; height: 32px; overflow: hidden; margin-bottom: 5px; }
-        .price { font-size: 16px; font-weight: 700; color: var(--gold); margin-bottom: 12px; }
-        .wa-btn { background: #000; color: #fff; text-decoration: none; text-align: center; font-size: 10px; font-weight: 700; padding: 12px; border-radius: 4px; text-transform: uppercase; display: block; }
+        .info { padding: 8px 0; text-align: left; }
+        .title { font-size: 11px; margin-bottom: 4px; text-transform: uppercase; line-height: 1.2; height: 2.4em; overflow: hidden; color: #333; }
+        .price { font-weight: 600; color: var(--gold); font-size: 13px; }
+        .add-btn { width: 100%; padding: 12px; background: #000; color: #fff; border: none; font-size: 9px; text-transform: uppercase; letter-spacing: 1px; margin-top: 8px; border-radius: 2px; cursor: pointer; }
 
-        /* Content Wrappers for FAQ, Payment, etc. */
-        .content-wrap { padding: 40px 8%; line-height: 1.8; }
-        .content-wrap h1 { font-family: 'Playfair Display'; font-size: 26px; margin-bottom: 25px; border-bottom: 2px solid var(--gold); display: inline-block; }
-        .content-wrap h3 { font-size: 15px; margin-top: 20px; color: var(--gold); text-transform: uppercase; }
-        .content-wrap p, .content-wrap li { font-size: 13px; color: #555; margin-bottom: 10px; list-style: none; }
-        .back-home { margin-top: 30px; display: inline-block; padding: 10px 20px; background: #000; color: #fff; text-decoration: none; font-size: 11px; cursor: pointer; }
+        /* Sidebar (Cart) */
+        #cart-sidebar {
+            position: fixed; top: 0; right: -100%; width: 85%; max-width: 320px; height: 100%;
+            background: white; z-index: 2000; transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1); padding: 25px; box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        }
+        #cart-sidebar.active { right: 0; }
 
-        /* Footer */
-        .full-footer { padding: 50px 8%; background: #fff; border-top: 1px solid #eee; margin-top: 50px; }
-        .footer-grid { display: grid; grid-template-columns: 1fr; gap: 30px; }
-        @media (min-width: 768px) { .grid { grid-template-columns: repeat(4, 1fr); } .footer-grid { grid-template-columns: repeat(3, 1fr); } }
-
-        /* Modal */
-        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 5000; align-items: center; justify-content: center; padding: 20px; }
-        .modal-inner { background: #fff; width: 100%; max-width: 350px; border-radius: 8px; overflow: hidden; }
-        .modal-img { width: 100%; height: 320px; background-size: cover; background-position: center; }
-        .modal-data { padding: 20px; text-align: center; }
+        /* Pages & Content */
+        .page { display: none; padding: 20px 15px; min-height: 70vh; }
+        .page.active { display: block; }
+        .section-title { font-family: 'Cormorant Garamond'; font-size: 28px; margin-bottom: 20px; }
+        
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        @media (min-width: 768px) { .grid { grid-template-columns: repeat(4, 1fr); gap: 20px; padding: 20px 5%; } }
     </style>
 </head>
 <body>
 
-    <div id="welcome-overlay">
-        <div class="welcome-content">
-            <p style="letter-spacing: 3px; font-size: 10px; color: var(--gold);">EST. 2026</p>
-            <h1>THE CLOTHS URBAN</h1>
-            <p>Premium Urban Collection. Minimalist Aesthetics.</p>
-            <button class="enter-btn" onclick="closeWelcome()">Explore Collection</button>
+    <div id="welcome-overlay" onclick="this.style.opacity='0'; setTimeout(()=>this.style.display='none', 500)">
+        <div>
+            <h1 style="font-family: 'Cormorant Garamond'; font-size: 35px; letter-spacing: 3px;">theclothsurban</h1>
+            <p style="letter-spacing: 4px; font-size: 10px; margin-bottom: 30px; color: #888;">LUXURY STREETWEAR</p>
+            <button style="background: #000; color: #fff; border: none; padding: 12px 40px; cursor: pointer; font-size: 10px; letter-spacing: 2px;">ENTER SHOP</button>
         </div>
     </div>
 
     <nav>
-        <div class="logo-text" onclick="showPage('home-page')">THE CLOTHS URBAN</div>
-        <div class="nav-tools">
-            <i class="fas fa-search" onclick="showPage('search-page')" style="cursor:pointer"></i>
-            <i class="fas fa-bars" onclick="showPage('menu-page')" style="margin-left:20px; cursor:pointer"></i>
+        <div class="logo" onclick="showPage('home-page')">theclothsurban</div>
+        <div class="nav-icons">
+            <i class="fas fa-search" onclick="showPage('search-page')"></i>
+            <div onclick="toggleCart()" style="position: relative; cursor: pointer;">
+                <i class="fas fa-shopping-bag"></i>
+                <span id="cart-count" style="position: absolute; top:-8px; right:-8px; background:black; color:white; font-size:9px; border-radius:50%; padding:1px 5px;">0</span>
+            </div>
+            <i class="fas fa-bars" onclick="showPage('menu-page')"></i>
         </div>
     </nav>
+
+    <div class="tabs-container" id="col-nav">
+        <div class="tab active" onclick="filterItems('All', this)">All</div>
+        <div class="tab" onclick="filterItems('New', this)">New Arrivals</div>
+        <div class="tab" onclick="filterItems('Essentials', this)">Essentials</div>
+        <div class="tab" onclick="filterItems('Sale', this)">Sale</div>
+    </div>
 
     <div id="home-page" class="page active">
         <div class="grid" id="main-grid"></div>
     </div>
 
-    <div id="why-page" class="page">
-        <div class="content-wrap">
-            <h1>Why theclothsurban?</h1>
-            <h3>1. Premium Quality</h3>
-            <p>Hum sirf premium fabric aur modern cuts use karte hain jo long-lasting hote hain.</p>
-            <h3>2. Urban Vibe</h3>
-            <p>Har design aaj ke street style ko dhyan mein rakh kar banaya gaya hai.</p>
-            <a onclick="showPage('home-page')" class="back-home">BACK TO SHOP</a>
-        </div>
-    </div>
-
-    <div id="faq-page" class="page">
-        <div class="content-wrap">
-            <h1>FAQs</h1>
-            <h3>How to Order?</h3>
-            <p>Product select karein aur "Order on WhatsApp" button dabayein.</p>
-            <h3>Exchange Policy?</h3>
-            <p>48 hours ke exchange policy available hai agar size issue ho.</p>
-            <a onclick="showPage('home-page')" class="back-home">BACK TO SHOP</a>
-        </div>
-    </div>
-
-    <div id="payment-page" class="page">
-        <div class="content-wrap">
-            <h1>Payment Details</h1>
-            <p>Hum ye modes accept karte hain:</p>
-            <li>• UPI (GPay, PhonePe, Paytm)</li>
-            <li>• Net Banking & All Cards</li>
-            <li>• Cash on Delivery (₹100 Extra Fee)</li>
-            <a onclick="showPage('home-page')" class="back-home">BACK TO SHOP</a>
-        </div>
-    </div>
-
-    <div id="track-page" class="page">
-        <div class="content-wrap" style="text-align:center">
-            <h1>Track Order</h1>
-            <input type="text" id="t-id" placeholder="Enter Order ID" style="width:100%; padding:15px; border:1px solid #ddd; border-radius:4px; max-width:400px; margin-bottom:15px;">
-            <br>
-            <button onclick="document.getElementById('t-res').innerText='Status: Processing...'" class="enter-btn">Check</button>
-            <p id="t-res" style="margin-top:20px; font-size:12px; color:#666;"></p>
-        </div>
+    <div id="search-page" class="page">
+        <input type="text" id="s-input" onkeyup="searchItems()" placeholder="Search collection..." style="width:100%; padding:12px; border:none; border-bottom:1px solid #000; font-size:16px; margin-bottom:20px; font-family: 'Montserrat';">
+        <div class="grid" id="search-grid"></div>
     </div>
 
     <div id="menu-page" class="page">
-        <div class="content-wrap">
-            <h2 style="font-family:'Playfair Display'; margin-bottom:20px;">Quick Access</h2>
-            <div style="display:flex; flex-direction:column; gap:20px;">
-                <p onclick="showPage('why-page')" style="cursor:pointer; border-bottom:1px solid #eee; padding-bottom:10px;">Why Choose Us?</p>
-                <p onclick="showPage('faq-page')" style="cursor:pointer; border-bottom:1px solid #eee; padding-bottom:10px;">FAQs</p>
-                <p onclick="showPage('payment-page')" style="cursor:pointer; border-bottom:1px solid #eee; padding-bottom:10px;">Payment Details</p>
-                <p onclick="showPage('track-page')" style="cursor:pointer; border-bottom:1px solid #eee; padding-bottom:10px;">Track Order</p>
-                <p onclick="showPage('home-page')" style="font-weight:700; cursor:pointer;">← Back to Shop</p>
-            </div>
+        <h2 class="section-title">Information</h2>
+        <div style="display:flex; flex-direction:column; gap:25px; font-size:12px; text-transform:uppercase; letter-spacing:1.5px;">
+            <p onclick="showPage('why-page')">Why theclothsurban?</p>
+            <p onclick="showPage('faq-page')">Support & FAQs</p>
+            <p onclick="showPage('pay-page')">Payment Methods</p>
+            <p onclick="showPage('contact-page')">Contact Us</p>
+            <p onclick="showPage('home-page')" style="color:var(--gold); font-weight:600;">← Back to Shopping</p>
         </div>
     </div>
 
-    <div id="search-page" class="page">
-        <div class="content-wrap">
-            <input type="text" id="s-input" onkeyup="doSearch()" placeholder="Search collection..." style="width:100%; padding:15px; font-size:22px; border:none; border-bottom:2px solid #000; outline:none;">
-            <div class="grid" id="search-results"></div>
-        </div>
-    </div>
+    <div id="why-page" class="page"><h2 class="section-title">Why Us?</h2><p>Premium fabric. Urban aesthetic. Exclusive drops.</p><button onclick="showPage('home-page')" class="add-btn" style="width:auto; padding:10px 25px; margin-top:20px;">Back</button></div>
+    <div id="faq-page" class="page"><h2 class="section-title">FAQs</h2><p>Shipping: 3-7 days. Exchange: 48 hours.</p><button onclick="showPage('home-page')" class="add-btn" style="width:auto; padding:10px 25px; margin-top:20px;">Back</button></div>
+    <div id="pay-page" class="page"><h2 class="section-title">Payments</h2><p>UPI, Cards, and COD (₹100 extra fee) accepted.</p><button onclick="showPage('home-page')" class="add-btn" style="width:auto; padding:10px 25px; margin-top:20px;">Back</button></div>
+    <div id="contact-page" class="page"><h2 class="section-title">Contact Us</h2><p>WhatsApp: +91 YOUR_NUMBER<br>Email: support@theclothsurban.in</p><button onclick="showPage('home-page')" class="add-btn" style="width:auto; padding:10px 25px; margin-top:20px;">Back</button></div>
 
-    <div class="full-footer">
-        <div class="footer-grid">
-            <div><h3 style="font-size:12px; margin-bottom:10px;">THE CLOTHS URBAN</h3><p style="font-size:11px; color:#666;">Minimal. Premium. Urban.</p></div>
-            <div><h3 style="font-size:12px; margin-bottom:10px;">QUICK LINKS</h3>
-                <p onclick="showPage('why-page')" style="font-size:11px; cursor:pointer; margin-bottom:5px;">Trust/Why Us?</p>
-                <p onclick="showPage('faq-page')" style="font-size:11px; cursor:pointer; margin-bottom:5px;">Support/FAQs</p>
-                <p onclick="showPage('payment-page')" style="font-size:11px; cursor:pointer;">Payments</p>
-            </div>
-            <div><h3 style="font-size:12px; margin-bottom:10px;">SOCIAL</h3><a href="https://instagram.com/theclothsurban" target="_blank" style="color:#000; font-size:20px;"><i class="fab fa-instagram"></i></a></div>
+    <div id="cart-sidebar">
+        <div style="display:flex; justify-content:space-between; margin-bottom:30px; border-bottom:1px solid #eee; padding-bottom:10px;">
+            <span style="font-weight:600; letter-spacing:1px;">SHOPPING BAG</span>
+            <i class="fas fa-times" onclick="toggleCart()" style="cursor:pointer;"></i>
         </div>
-        <p style="text-align:center; margin-top:40px; font-size:9px; color:#aaa;">© 2026 THE CLOTHS URBAN</p>
-    </div>
-
-    <div id="p-modal" class="modal">
-        <div class="modal-inner">
-            <div id="m-img" class="modal-img"></div>
-            <div class="modal-data">
-                <h2 id="m-title" style="font-family:'Playfair Display';"></h2>
-                <span id="m-price" style="color:var(--gold); font-weight:700; display:block; margin:10px 0;"></span>
-                <a href="#" id="wa-link" class="wa-btn">Order on WhatsApp</a>
-                <p onclick="closeM()" style="margin-top:15px; font-size:11px; text-decoration:underline; cursor:pointer">Close</p>
-            </div>
+        <div id="cart-content" style="font-size:13px; color:#888;">Your bag is currently empty.</div>
+        <div id="cart-foot" style="position:absolute; bottom:25px; width:85%; display:none;">
+            <button onclick="checkout()" class="add-btn" style="padding:15px; font-weight:600;">CHECKOUT ON WHATSAPP</button>
         </div>
     </div>
 
     <script>
-        function closeWelcome() {
-            document.getElementById('welcome-overlay').style.opacity = '0';
-            setTimeout(() => { document.getElementById('welcome-overlay').style.display = 'none'; }, 500);
-        }
+        let allItems = [];
+        let cart = [];
 
         function showPage(id) {
             document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
             document.getElementById(id).classList.add('active');
+            document.getElementById('col-nav').style.display = (id === 'home-page') ? 'block' : 'none';
             window.scrollTo(0,0);
         }
 
-        let items = [];
-        const S_ID = '1oLLc5XZQHpR6f1iW8YKTQ6LG6fOtf1S8ZFXWT3Nm4Bg';
-        const URL = `https://docs.google.com/spreadsheets/d/${S_ID}/gviz/tq?tqx=out:json`;
+        function toggleCart() { document.getElementById('cart-sidebar').classList.toggle('active'); }
 
-        async function getData() {
+        async function loadData() {
+            const S_ID = '1oLLc5XZQHpR6f1iW8YKTQ6LG6fOtf1S8ZFXWT3Nm4Bg';
+            const URL = `https://docs.google.com/spreadsheets/d/${S_ID}/gviz/tq?tqx=out:json`;
             try {
-                const r = await fetch(URL + '&cb=' + Math.random());
+                const r = await fetch(URL);
                 const t = await r.text();
                 const j = JSON.parse(t.substr(47).slice(0, -2));
-                items = j.table.rows.map(row => ({
-                    n: row.c[0] ? row.c[0].v : 'Drop',
-                    p: row.c[1] ? row.c[1].v : '',
-                    i: row.c[2] ? row.c[2].v.trim() : '',
-                    c: row.c[3] ? row.c[3].v.trim() : 'New'
-                })).filter(x => x.i !== '');
-                render(items, 'main-grid');
-            } catch (e) { console.log("Load Error"); }
+                allItems = j.table.rows.map(row => ({
+                    name: row.c[0] ? row.c[0].v : 'Urban Piece',
+                    price: row.c[1] ? row.c[1].v : '',
+                    img: row.c[2] ? row.c[2].v.trim() : '',
+                    cat: (row.c[3] && row.c[3].v) ? row.c[3].v.trim() : 'New'
+                })).filter(x => x.img.includes('http')); // Sirf link wali items load karega
+                render(allItems, 'main-grid');
+            } catch (e) { console.error("Data error"); }
         }
 
-        function render(arr, target) {
-            document.getElementById(target).innerHTML = arr.map(x => `
+        function render(list, target) {
+            const container = document.getElementById(target);
+            if(list.length === 0) { container.innerHTML = "<p style='padding:20px; color:#999;'>No products found.</p>"; return; }
+            container.innerHTML = list.map(x => `
                 <div class="card">
-                    <div class="img-wrap" onclick="openM('${x.i}','${x.n}','${x.p}')"><img src="${x.i}"></div>
+                    <div class="img-wrap"><img src="${x.img}"></div>
                     <div class="info">
-                        <div class="title">${x.n}</div><div class="price">${x.p}</div>
-                        <a href="https://wa.me/91YOUR_NUMBER?text=Order: ${x.n}" class="wa-btn">Order Now</a>
+                        <div class="title">${x.name}</div>
+                        <div class="price">${x.price}</div>
+                        <button class="add-btn" onclick="addToCart('${x.name}', '${x.price}')">Add to Bag</button>
                     </div>
                 </div>`).join('');
         }
 
-        function doSearch() {
-            let v = document.getElementById('s-input').value.toLowerCase();
-            render(items.filter(x => x.n.toLowerCase().includes(v)), 'search-results');
+        function filterItems(cat, el) {
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            el.classList.add('active');
+            render(cat === 'All' ? allItems : allItems.filter(p => p.cat === cat), 'main-grid');
         }
 
-        function openM(i, t, p) {
-            document.getElementById('m-img').style.backgroundImage = `url('${i}')`;
-            document.getElementById('m-title').innerText = t;
-            document.getElementById('m-price').innerText = p;
-            document.getElementById('wa-link').href = `https://wa.me/91YOUR_NUMBER?text=Order: ${t} (${p})`;
-            document.getElementById('p-modal').style.display = 'flex';
+        function searchItems() {
+            let val = document.getElementById('s-input').value.toLowerCase();
+            render(allItems.filter(p => p.name.toLowerCase().includes(val)), 'search-grid');
         }
 
-        function closeM() { document.getElementById('p-modal').style.display = 'none'; }
-        window.onload = getData;
+        function addToCart(n, p) {
+            cart.push({n, p});
+            document.getElementById('cart-count').innerText = cart.length;
+            updateCartUI();
+            toggleCart();
+        }
+
+        function updateCartUI() {
+            const box = document.getElementById('cart-content');
+            const foot = document.getElementById('cart-foot');
+            if(cart.length === 0) { box.innerHTML = "Your bag is currently empty."; foot.style.display="none"; return; }
+            foot.style.display="block";
+            box.innerHTML = cart.map(x => `<div style="display:flex; justify-content:space-between; margin-bottom:12px; border-bottom:1px solid #f2f2f2; padding-bottom:5px;"><span>${x.n}</span><b>${x.p}</b></div>`).join('');
+        }
+
+        function checkout() {
+            let msg = "Hello theclothsurban, I want to order:\n" + cart.map(x => `- ${x.n} (${x.p})`).join('\n');
+            window.open(`https://wa.me/91YOUR_NUMBER?text=${encodeURIComponent(msg)}`);
+        }
+
+        window.onload = loadData;
     </script>
 </body>
 </html>
-
