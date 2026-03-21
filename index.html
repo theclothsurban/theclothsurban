@@ -1,222 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>theclothsurban | Official Store</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaydeep Kumar Raj | Authorized Insurance Advisor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        :root { --gold: #c5a059; --black: #0a0a0a; --white: #ffffff; --gray: #f2f2f2; --red: #e74c3c; }
-        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; outline: none !important; }
-        body { font-family: 'Montserrat', sans-serif; background: #fff; color: var(--black); overflow-x: hidden; width: 100%; }
-
-        /* Animation for Scroll Feel */
-        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.6s ease-out; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-
-        .promo-banner { background: var(--black); color: #fff; font-size: 10px; padding: 8px; text-align: center; letter-spacing: 2px; text-transform: uppercase; position: relative; z-index: 1001; }
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 0 15px; height: 60px; background: #fff; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #eee; }
-        .logo { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; flex: 1; cursor: pointer; }
-        .nav-icons { display: flex; gap: 18px; font-size: 16px; align-items: center; }
-
-        /* Single Line Size Section Fix */
-        .size-container { overflow-x: auto; white-space: nowrap; width: 100%; padding: 5px 0; scrollbar-width: none; -ms-overflow-style: none; margin-bottom: 8px; }
-        .size-container::-webkit-scrollbar { display: none; }
-        .size-box { display: inline-flex; gap: 6px; }
-        .size-btn { border: 1px solid #ddd; background: #fff; font-size: 9px; padding: 6px 10px; border-radius: 4px; cursor: pointer; min-width: 35px; text-align: center; transition: 0.2s; }
-        .size-btn.selected { background: #000; color: #fff; border-color: #000; }
-
-        .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; padding: 12px; }
-        .card { background: #fff; border: 1px solid #f0f0f0; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; }
-        .img-wrap { width: 100%; aspect-ratio: 3/4; overflow: hidden; background: var(--gray); }
-        .img-wrap img { width: 100%; height: 100%; object-fit: cover; }
-        
-        .info { padding: 10px; text-align: left; }
-        .title { font-size: 11px; margin-bottom: 4px; text-transform: capitalize; color: #444; height: 1.3em; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
-        .price { font-weight: 700; color: #000; font-size: 14px; margin-bottom: 8px; }
-
-        .btn-row { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; }
-        .btn { padding: 10px 5px; font-size: 9px; font-weight: 600; text-transform: uppercase; cursor: pointer; border-radius: 4px; border: none; }
-        .btn-bag { background: #fff; border: 1px solid #000; color: #000; }
-        .btn-buy { background: var(--black); color: #fff; }
-
-        #cart-sidebar { position: fixed; top: 0; right: -100%; width: 85%; max-width: 320px; height: 100%; background: white; z-index: 2000; transition: 0.3s ease; padding: 20px; box-shadow: -5px 0 15px rgba(0,0,0,0.1); }
-        #cart-sidebar.active { right: 0; }
-        .cart-item { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid #eee; font-size: 12px; }
-        .remove-btn { color: var(--red); font-size: 14px; cursor: pointer; padding: 5px; }
-
-        .page { display: none; padding: 20px 15px; min-height: 80vh; }
-        .page.active { display: block; }
+        body { background-color: #0f172a; color: white; font-family: 'Inter', sans-serif; }
+        .glass-card { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); transition: 0.3s; }
+        .glass-card:hover { border-color: #3b82f6; box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.5); }
+        .accent-gradient { background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); transition: 0.3s; }
+        .accent-gradient:hover { transform: translateY(-2px); filter: brightness(1.1); }
     </style>
 </head>
-<body>
+<body class="p-4 md:p-10 flex flex-col items-center min-h-screen justify-center">
 
-    <div class="promo-banner"><span>DROPPING SOON:</span> NEW OVERSIZED ESSENTIALS</div>
+    <header class="text-center mb-12 max-w-2xl">
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-2 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
+            Jaydeep Kumar Raj
+        </h1>
+        <p class="text-slate-400 text-lg">Authorized Turtlemint Insurance Advisor</p>
+        <div class="h-1 w-20 bg-blue-500 mx-auto mt-4 rounded-full"></div>
+    </header>
 
-    <nav>
-        <div class="logo" onclick="showPage('home-page')">theclothsurban</div>
-        <div class="nav-icons">
-            <i class="fas fa-search" onclick="showPage('search-page')"></i>
-            <div onclick="toggleCart()" style="position: relative; cursor: pointer;">
-                <i class="fas fa-shopping-bag"></i>
-                <span id="cart-count" style="position: absolute; top:-8px; right:-8px; background:var(--red); color:white; font-size:9px; border-radius:50%; padding:1px 5px;">0</span>
-            </div>
-            <i class="fas fa-bars" onclick="showPage('menu-page')"></i>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl mb-12">
+        
+        <div class="glass-card p-8 rounded-3xl text-center shadow-xl">
+            <div class="text-6xl mb-4">🏍️</div>
+            <h2 class="text-2xl font-bold mb-2 text-blue-400">2-Wheeler</h2>
+            <p class="text-sm text-slate-400 mb-8 leading-relaxed">Bike aur Scooter ka instant insurance, sabse saste premium par payein.</p>
+            <a href="https://advisor.turtlemintinsurance.com/profile/4020168/jaydeep_kumar_raj" target="_blank" class="accent-gradient px-8 py-4 rounded-xl font-bold block shadow-lg">
+                Buy Bike Insurance
+            </a>
         </div>
-    </nav>
 
-    <div id="home-page" class="page active"><div class="grid" id="main-grid"></div></div>
-    
-    <div id="search-page" class="page">
-        <input type="text" id="s-input" onkeyup="searchItems()" placeholder="Search styles..." style="width:100%; padding:15px; border:1px solid #ddd; border-radius:8px; margin-bottom:20px;">
-        <div class="grid" id="search-grid"></div>
-    </div>
-
-    <div id="menu-page" class="page">
-        <h2 style="font-family:'Cormorant Garamond'; border-bottom:1px solid #eee; padding-bottom:10px;">Information</h2>
-        <div style="margin-top:20px; display:flex; flex-direction:column; gap:20px; text-transform:uppercase; font-size:12px; letter-spacing:1px;">
-            <p onclick="showPage('home-page')">New Arrivals</p>
-            <p onclick="alert('WhatsApp Us for help')">Contact Us</p>
-            <p onclick="alert('Shipping takes 3-7 days')">Shipping Info</p>
-            <p onclick="showPage('home-page')" style="color:var(--gold);">Back to Store</p>
+        <div class="glass-card p-8 rounded-3xl text-center shadow-xl">
+            <div class="text-6xl mb-4">🚗</div>
+            <h2 class="text-2xl font-bold mb-2 text-emerald-400">4-Wheeler</h2>
+            <p class="text-sm text-slate-400 mb-8 leading-relaxed">Car aur Commercial vehicles ke liye Comprehensive & Third Party plans.</p>
+            <a href="https://advisor.turtlemintinsurance.com/profile/4020168/jaydeep_kumar_raj" target="_blank" class="accent-gradient px-8 py-4 rounded-xl font-bold block shadow-lg">
+                Buy Car Insurance
+            </a>
         </div>
     </div>
 
-    <div id="cart-sidebar">
-        <div style="display:flex; justify-content:space-between; margin-bottom:20px;">
-            <span style="font-weight:600;">MY BAG</span>
-            <i class="fas fa-times" onclick="toggleCart()"></i>
-        </div>
-        <div id="cart-content">Your bag is empty.</div>
-        <div id="cart-foot" style="position:absolute; bottom:20px; width:88%; display:none;">
-            <button onclick="checkout()" style="width:100%; background:#000; color:#fff; padding:15px; border:none; border-radius:5px; font-weight:600;">CHECKOUT (WHATSAPP)</button>
-        </div>
+    <div class="w-full max-w-md text-center">
+        <a href="https://wa.me/919023416010?text=Hi Jaydeep, mujhe insurance quote chahiye" target="_blank" class="flex items-center justify-center gap-3 bg-emerald-600 hover:bg-emerald-700 p-4 rounded-2xl font-bold transition-all shadow-lg text-lg">
+            <span>💬</span> WhatsApp par Connect Karein
+        </a>
+        <p class="text-slate-500 text-[10px] mt-8 uppercase tracking-[0.2em] font-bold">Authorized POSP Advisor • Anand, Gujarat</p>
     </div>
 
-    <script>
-        let allItems = [];
-        let cart = [];
-        let selectedSizes = {};
-
-        function showPage(id) {
-            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-            document.getElementById(id).classList.add('active');
-            window.scrollTo(0,0);
-        }
-
-        function toggleCart() { document.getElementById('cart-sidebar').classList.toggle('active'); }
-
-        async function loadData() {
-            const S_ID = '1oLLc5XZQHpR6f1iW8YKTQ6LG6fOtf1S8ZFXWT3Nm4Bg';
-            const URL = `https://docs.google.com/spreadsheets/d/${S_ID}/gviz/tq?tqx=out:json`;
-            try {
-                const r = await fetch(URL);
-                const t = await r.text();
-                const j = JSON.parse(t.substr(47).slice(0, -2));
-                allItems = j.table.rows.map((row, index) => ({
-                    id: index,
-                    name: row.c[0] ? row.c[0].v : 'Urban Piece',
-                    price: row.c[1] ? row.c[1].v : '',
-                    img: row.c[2] ? row.c[2].v.trim() : '',
-                })).filter(x => x.img.includes('http'));
-                render(allItems, 'main-grid');
-            } catch (e) { console.error("Error"); }
-        }
-
-        function render(list, target) {
-            document.getElementById(target).innerHTML = list.map(x => `
-                <div class="card reveal">
-                    <div class="img-wrap"><img src="${x.img}"></div>
-                    <div class="info">
-                        <div class="title">${x.name}</div>
-                        <div class="price">${x.price}</div>
-                        <div class="size-container">
-                            <div class="size-box" id="size-for-${x.id}">
-                                <button class="size-btn" onclick="selectSize(${x.id}, 'S', this)">S</button>
-                                <button class="size-btn" onclick="selectSize(${x.id}, 'M', this)">M</button>
-                                <button class="size-btn" onclick="selectSize(${x.id}, 'L', this)">L</button>
-                                <button class="size-btn" onclick="selectSize(${x.id}, 'XL', this)">XL</button>
-                                <button class="size-btn" onclick="selectSize(${x.id}, 'XXL', this)">XXL</button>
-                            </div>
-                        </div>
-                        <div class="btn-row">
-                            <button class="btn btn-bag" onclick="addToCart(${x.id})">Add</button>
-                            <button class="btn btn-buy" onclick="buyNow(${x.id})">Buy Now</button>
-                        </div>
-                    </div>
-                </div>`).join('');
-            
-            setTimeout(reveal, 100); // Initial reveal
-        }
-
-        // Scroll Animation Logic
-        function reveal() {
-            var reveals = document.querySelectorAll(".reveal");
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 100;
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("active");
-                }
-            }
-        }
-        window.addEventListener("scroll", reveal);
-
-        function selectSize(id, size, el) {
-            const parent = document.getElementById(`size-for-${id}`);
-            parent.querySelectorAll('.size-btn').forEach(b => b.classList.remove('selected'));
-            el.classList.add('selected');
-            selectedSizes[id] = size;
-        }
-
-        function addToCart(id) {
-            const size = selectedSizes[id];
-            if(!size) { alert("Please select size!"); return; }
-            const item = allItems.find(p => p.id === id);
-            cart.push({...item, selectedSize: size, cartId: Date.now()});
-            updateCart();
-            toggleCart();
-        }
-
-        function buyNow(id) {
-            const size = selectedSizes[id];
-            if(!size) { alert("Please select size!"); return; }
-            const item = allItems.find(p => p.id === id);
-            let msg = `I want to buy:\n- ${item.name}\n- Size: ${size}\n- Price: ${item.price}`;
-            window.open(`https://wa.me/91YOUR_NUMBER?text=${encodeURIComponent(msg)}`);
-        }
-
-        function removeFromCart(cartId) {
-            cart = cart.filter(item => item.cartId !== cartId);
-            updateCart();
-        }
-
-        function updateCart() {
-            document.getElementById('cart-count').innerText = cart.length;
-            const box = document.getElementById('cart-content');
-            const foot = document.getElementById('cart-foot');
-            if(cart.length === 0) { box.innerHTML = "Your bag is empty."; foot.style.display="none"; return; }
-            foot.style.display="block";
-            box.innerHTML = cart.map(x => `
-                <div class="cart-item">
-                    <div><b>${x.name}</b><br><small>Size: ${x.selectedSize} | ${x.price}</small></div>
-                    <i class="fas fa-trash-alt remove-btn" onclick="removeFromCart(${x.cartId})"></i>
-                </div>`).join('');
-        }
-
-        function checkout() {
-            let msg = "Order List:\n" + cart.map(x => `- ${x.name} (${x.selectedSize})`).join('\n');
-            window.open(`https://wa.me/91YOUR_NUMBER?text=${encodeURIComponent(msg)}`);
-        }
-
-        function searchItems() {
-            let val = document.getElementById('s-input').value.toLowerCase();
-            render(allItems.filter(p => p.name.toLowerCase().includes(val)), 'search-grid');
-        }
-
-        window.onload = loadData;
-    </script>
 </body>
 </html>
